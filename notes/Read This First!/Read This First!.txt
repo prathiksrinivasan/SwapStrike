@@ -1,0 +1,21 @@
+
+
+🎉 Welcome to Platform Fighter Engine! 🎉
+
+
+- Not sure where to start?
+	Check out the tutorials on the website: https://platformfighterengine.github.io/#/tutorials
+
+- Trying to find a script, sprite, or object?
+	1. Use the search bar in the Asset Browser
+	2. Use the Ctrl + T keyboard shortcut
+	3. Use Ctrl + Shift + F to globally search through all lines of code
+
+- Unsure about the license terms?
+	Read the license file in the project folder, or online: https://platformfighterengine.github.io/#/about
+	
+- Do you need more specific help, or want to talk to other developers?
+	Join the Discord server: https://discord.gg/kTX3pug
+
+
+If you have any other questions, check the FAQ file in the project folder, or read it online: https://platformfighterengine.github.io/#/faq

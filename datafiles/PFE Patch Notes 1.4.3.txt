@@ -1,0 +1,29 @@
+Platform Fighter Engine Full Release 1.4.3 - Patch Notes
+(Last Modified: 5/29/24)
+
+Attacks
+- General balance adjustments.
+- "sheik_fspec_chain" is now easier to modify in the code.
+- `shulk_nspec_monado_arts" now increases your maximum shield HP while Shield Art is active.
+- Added more sound effects to premade attacks.
+
+Fixes
+- Local frame skip no longer counts input presses twice.
+	- This fixes a common issue where pressing the Jump button once would perform two jumps if the game was running under 60fps.
+- The player no longer faces the wrong direction for 1 frame when turning around.
+- Taking control of a player in a replay no longer causes the game to crash if the match continues for longer than the replay file.
+- "hurtbox_anim_match" no longer crashes if you pass it an animation array instead of a sprite.
+- EX moves no longer also fill up the EX meter.
+- You can now jump during the Shield Release state.
+- Run Turnaround no longer creates VFX facing the wrong direction.
+
+Extra
+- Added more sound effects.
+- Shield colors now use "player_color_get".
+	- CPU shields and HUD elements are now always gray.
+- Added a new option "ledge_grab_require_input".
+- Added the optional argument "clear_custom_data" to "switch_character", which will reset certain variables.
+- Fixed some typos in comments.
+- Added better error messages for some scripts.
+- Updated the license terms to be more clear.
+- Updated all copyrights to be 2024.
