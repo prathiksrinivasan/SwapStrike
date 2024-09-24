@@ -8,6 +8,20 @@ function character_data_get_all()
 		[
 		character_define
 			(
+			"TestCharacter",
+			character_test_init,
+			spr_blocky_palette,
+			spr_blocky_css,
+			spr_blocky_css,
+			spr_blocky_portrait,
+			spr_blocky_stock,
+			spr_blocky_render,
+			song_default_victory,
+			["texture_character_blocky", "texture_character_basic"],
+			blocky_cpu_script,
+			),
+		character_define
+			(
 			"Blocky",
 			character_blocky_init,
 			spr_blocky_palette,

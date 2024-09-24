@@ -91,7 +91,7 @@ It is automatically run at the start of the game.
 #macro online_chat_messages_stored		12 //{int} The maximum number of chat messages that are stored.
 
 //Touch Controls
-#macro touch_controls_enable			true //{bool} Whether touch controls are enabled for the entire game or not.
+#macro touch_controls_enable			false //{bool} Whether touch controls are enabled for the entire game or not.
 #macro touch_devices_limit				5 //{int} The number of mouse/touch devices to check.
 #macro touch_stick_sensitivity			2.0 //{real} The multiplier used for the touch control stick.
 
@@ -105,6 +105,8 @@ It is automatically run at the start of the game.
 
 //Palettes
 #macro palette_size_max					48 //{int} The maximum number of colors that can be in each column of a character's palette. If you want to increase this number, you will also need to change the array size in each palette shader.
+
+#macro debug_training					true //{bool) If true, will send the game directly into a testing room at initialization
 
 //Global Object Surface - Used to draw cropped sprites with the outline shader.
 function object_surface_get()

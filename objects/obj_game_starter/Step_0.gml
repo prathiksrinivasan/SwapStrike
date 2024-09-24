@@ -13,8 +13,15 @@ if (started_intro)
 			}
 		else
 			{
-			room_goto_next();
-			exit;
+				show_debug_message("init complete");
+			//if(debug_training){
+				start_debug_game();
+				exit;
+			//}
+			//else{
+			//	room_goto_next();
+			//	exit;
+			//}
 			}
 		}
 	}
