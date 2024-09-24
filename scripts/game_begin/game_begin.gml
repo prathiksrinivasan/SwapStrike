@@ -25,7 +25,7 @@ function game_begin()
 		}
 	if (argument_count > 2)
 		{
-		//Set online
+		engine().is_online = argument[2];
 		}
 	
 	//Clear the replay buffer if NOT in replay mode

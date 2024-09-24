@@ -65,7 +65,7 @@ function bayonetta_fair()
 			case 1:
 				{
 				//Boost
-				if (hitbox_attached_group_connected(0))
+				if (hitbox_group_connected(0))
 					{
 					if (vsp > -2)
 						{
@@ -139,7 +139,7 @@ function bayonetta_fair()
 			case 3:
 				{
 				//Boost
-				if (vsp > -2 && hitbox_attached_group_connected(1))
+				if (vsp > -2 && hitbox_group_connected(1))
 					{
 					speed_set(6 * facing, -4, true, false);
 					}
@@ -194,7 +194,7 @@ function bayonetta_fair()
 			case 5:
 				{
 				//Boost
-				if (vsp > 0 && hitbox_attached_group_connected(1))
+				if (vsp > 0 && hitbox_group_connected(1))
 					{
 					speed_set(0, -4, true, false);
 					}

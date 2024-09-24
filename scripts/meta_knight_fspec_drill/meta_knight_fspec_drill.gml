@@ -118,7 +118,7 @@ function meta_knight_fspec_drill()
 			case 2:
 				{
 				//Bounce back
-				if (attack_frame == 15 && hitbox_attached_group_connected(1))
+				if (attack_frame == 15 && hitbox_group_connected(1))
 					{
 					speed_set(-7 * custom_ids_struct.drill_facing, -7, false, false);
 					facing = custom_ids_struct.drill_facing;

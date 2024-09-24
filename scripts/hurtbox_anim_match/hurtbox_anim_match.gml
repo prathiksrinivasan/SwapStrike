@@ -15,7 +15,7 @@ function hurtbox_anim_match()
 	if (sprite_exists(_sprite))
 		{
 		hurtbox.sprite_index = _sprite;
-		hurtbox.image_index = clamp(floor(anim_frame), 0, sprite_get_number(anim_sprite) - 1);
+		hurtbox.image_index = clamp(floor(anim_frame), 0, sprite_get_number(_sprite) - 1);
 		hurtbox.image_xscale = sprite_scale * facing;
 		hurtbox.image_yscale = sprite_scale;
 		hurtbox.image_angle = anim_angle;

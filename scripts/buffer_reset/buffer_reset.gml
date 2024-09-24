@@ -15,4 +15,5 @@ function buffer_reset()
 		}
 	buffer_seek(_buff, buffer_seek_start, 0);
 	}
+
 /* Copyright 2024 Springroll Games / Yosi */

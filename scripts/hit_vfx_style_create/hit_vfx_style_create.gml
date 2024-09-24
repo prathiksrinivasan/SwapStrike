@@ -9,11 +9,11 @@ Creates the given VFX style. The specific coordinates, sprites, etc. vary based 
 */
 function hit_vfx_style_create()
 	{
-	var _style = argument[0],
-		_angle = argument[1],
-		_hitbox = argument[2],
-		_knock = argument[3],
-		_layer = argument_count > 4 ? argument[4] : "VFX_Layer";
+	var _style = argument[0];
+	var _angle = argument[1];
+	var _hitbox = argument[2];
+	var _knock = argument[3];
+	var _layer = argument_count > 4 ? argument[4] : "VFX_Layer";
 	
 	//If the user passes an array as the style, it runs each one in turn
 	var _styles = [];

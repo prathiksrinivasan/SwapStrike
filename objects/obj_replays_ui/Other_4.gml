@@ -1,5 +1,9 @@
 ///@description
 
+//Offline
+engine().is_online = false;
+ggmr_destroy_all();
+				
 //Menu Input System
 mis_init();
 mis_auto_connect_enable(true);

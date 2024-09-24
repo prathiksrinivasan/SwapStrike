@@ -60,7 +60,7 @@ function ryu_uspec_shoryuken()
 						_hitbox.hit_vfx_style = [HIT_VFX.normal_strong, HIT_VFX.normal_medium];
 						_hitbox.hit_sfx = snd_hit_strong2;
 						_hitbox.knockback_state = PLAYER_STATE.balloon;
-						_hitbox.is_reeling = true;
+						_hitbox.force_reeling = true;
 						}
 					else
 						{
@@ -69,7 +69,7 @@ function ryu_uspec_shoryuken()
 						_hitbox.hit_vfx_style = HIT_VFX.normal_strong;
 						_hitbox.hit_sfx = snd_hit_strong2;
 						_hitbox.knockback_state = PLAYER_STATE.balloon;
-						_hitbox.is_reeling = true;
+						_hitbox.force_reeling = true;
 						}
 					}
 				break;

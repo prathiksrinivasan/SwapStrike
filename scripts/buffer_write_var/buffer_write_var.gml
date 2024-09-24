@@ -19,4 +19,5 @@ function buffer_write_var()
 	buffer_write(_b, buffer_s8, _type);
 	buffer_write(_b, _type, _val);
 	}
+
 /* Copyright 2024 Springroll Games / Yosi */

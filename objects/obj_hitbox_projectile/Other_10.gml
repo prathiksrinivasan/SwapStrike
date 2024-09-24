@@ -32,9 +32,10 @@ if (!_frozen)
 		y += vsp;
 		}
 	
-	if (destroy_outside_room)
+	if (destroy_outside_blastzone)
 		{
-		if (!point_in_rectangle(x, y, 0, 0, room_width, room_height))
+		var _blastzones = obj_stage_manager.blastzones;
+		if (!point_in_rectangle(x, y, _blastzones.left, _blastzones.top, _blastzones.right, _blastzones.bottom))
 			{
 			destroy = true;
 			}

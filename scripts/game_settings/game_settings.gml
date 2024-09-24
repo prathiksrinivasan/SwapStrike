@@ -27,10 +27,12 @@ function setting()
 		match_fs_meter :					match_fs_meter_default, //{bool} Whether Final Smash meters are enabled or not. The default value is <match_fs_meter_default>.
 		match_screen_wrap :					match_screen_wrap_default, //{bool} Whether players should wrap around the screen instead of getting KO'ed. The default value is <match_screen_wrap_default>. Warning: This should only be used in Time or Stamina matches, and will change the knockback formula for Stamina matches.
 		match_ex_meter :					match_ex_meter_default, //{bool} Whether EX meters are enabled or not. The default value is <match_ex_meter_default>.
+		debug_sync_test :					false, //{bool} Saves & loads the game every single frame, for the purpose of testing performance. Warning: This is for debug use ONLY!
 		debug_fps :							false, //{bool} Whether to show FPS numbers in the top right corner or not.
 		performance_mode :					false, //{bool} Performance mode turns off certain visual effects to increase performance.
 		disable_shaders :					false, //{bool} Whether to disable all shaders or not.
 		local_frame_skip :					true, //{bool} Whether frames can be skipped locally if the game is running under 60fps or not.
+		negative_input_delay :				0, //{int} The number of frames backwards players' inputs will be applied, during local matches. Must be greater than or equal to 0. Warning: Using negative input delay will increase performance and cause visual artifacts.
 		//Visibility
 		show_hitboxes :						false, //{bool} Whether to make hitboxes visible or not.
 		show_hurtboxes :					false, //{bool} Whether to make hurtboxes visible or not.
@@ -480,6 +482,9 @@ function setting()
 #macro win_screen_losers_portrait_scale		2 //{int} The scaling of the losers' portrait sprites on the Win Screen.
 //Online
 //Replays
+#macro replay_rewind_enable					true //{bool} Whether the game supports replay rewinding or not.
+#macro replay_rewind_interval				180 //{int} The number of frames between each rewind save point.
+#macro replay_rewind_saves_max				100 //{int} The maximum number of rewind save points that can stored at once.
 #macro replay_sync_mode						true //{bool} Whether to save extra data in replays to catch desyncs or not. This will greatly increase the file size of replays.
 //Clips
 #macro clip_length							180 //{int} The number of previous frames that are saved in a clip. Clips are saved at 30fps.

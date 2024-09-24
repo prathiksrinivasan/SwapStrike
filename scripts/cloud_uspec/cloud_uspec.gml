@@ -43,7 +43,7 @@ function cloud_uspec()
 					var _hitbox = hitbox_create_melee(50, 0, 1.2, 0.3, 3, 13, 0, 14, 90, 1, SHAPE.square, 0);
 					_hitbox.hit_vfx_style = [HIT_VFX.slash_medium, HIT_VFX.normal_medium];
 					_hitbox.hit_sfx = snd_hit_weak1;
-					_hitbox.is_reeling = true;
+					_hitbox.force_reeling = true;
 					_hitbox.custom_hitstun = 30;
 					_hitbox.drift_di_multiplier = 0;
 					}
@@ -74,7 +74,7 @@ function cloud_uspec()
 					var _hitbox = hitbox_create_melee(50, -12, 1.2, 0.7, 4, 13, 0, 4, 90, 2, SHAPE.square, 1);
 					_hitbox.hit_vfx_style = [HIT_VFX.slash_medium, HIT_VFX.normal_medium];
 					_hitbox.hit_sfx = snd_hit_weak0;
-					_hitbox.is_reeling = true;
+					_hitbox.force_reeling = true;
 					_hitbox.custom_hitstun = 30;
 					_hitbox.drift_di_multiplier = 0;
 					}
@@ -85,7 +85,7 @@ function cloud_uspec()
 					var _hitbox = hitbox_create_melee(50, -12, 1.2, 0.7, 4, 5, 0, 4, 90, 7, SHAPE.square, 1);
 					_hitbox.hit_vfx_style = [HIT_VFX.slash_medium, HIT_VFX.normal_weak];
 					_hitbox.hit_sfx = snd_hit_weak1;
-					_hitbox.is_reeling = true;
+					_hitbox.force_reeling = true;
 					_hitbox.custom_hitstun = 25;
 					_hitbox.drift_di_multiplier = 0;
 					}

@@ -12,17 +12,42 @@ function hit_sfx_play()
 	var _snd = argument[0],
 	var _pitch = argument_count > 1 ? argument[1] : hit_sound_pitch_variance;
 	var _x = argument_count > 2 ? argument[2] : x;
-
-	if (_snd != -1)
+	
+	//In Online matches, or if the GGMR session is in local mode, sounds cannot be replayed as fast to avoid duplicated sounds
+	if (game_is_online() || instance_number(obj_ggmr_session) > 0)
 		{
-		//Choose a random sound to play if an array is given
-		if (is_array(_snd))
+		if (!rollback_frame_is_first_occurrence())
 			{
-			_snd = _snd[@ prng_number(0, array_length(_snd) - 1)];
+			return undefined;
 			}
+		else
+			{
+			if (_snd != -1)
+				{
+				//Choose a random sound to play if an array is given
+				if (is_array(_snd))
+					{
+					_snd = _snd[@ prng_number(0, array_length(_snd) - 1)];
+					}
 			
-		var _index = sound_system_play(_snd, hit_sound_replace, hit_sound_priority_default, hit_sound_replay_timer_default, _pitch, true, _x);
-		return _index;
+				var _index = sound_system_play(_snd, hit_sound_replace, hit_sound_priority_default, GGMR_PREDICTION_FRAMES_MAX, _pitch, true, _x);
+				return _index;
+				}
+			}
+		}
+	else
+		{
+		if (_snd != -1)
+			{
+			//Choose a random sound to play if an array is given
+			if (is_array(_snd))
+				{
+				_snd = _snd[@ prng_number(0, array_length(_snd) - 1)];
+				}
+			
+			var _index = sound_system_play(_snd, hit_sound_replace, hit_sound_priority_default, hit_sound_replay_timer_default, _pitch, true, _x);
+			return _index;
+			}
 		}
 	return undefined;
 	}

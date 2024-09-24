@@ -15,7 +15,7 @@
 	Read the license file in the project folder, or online: https://platformfighterengine.github.io/#/about
 	
 - Do you need more specific help, or want to talk to other developers?
-	Join the Discord server: https://discord.gg/kTX3pug
+	Join the Discord Server: https://discord.gg/kTX3pug
 
 
 If you have any other questions, check the FAQ file in the project folder, or read it online: https://platformfighterengine.github.io/#/faq

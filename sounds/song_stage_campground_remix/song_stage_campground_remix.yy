@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "song_stage_campground_remix",
   "conversionMode": 0,
-  "compression": 1,
+  "compression": 2,
   "volume": 0.6,
   "preload": false,
   "bitRate": 128,

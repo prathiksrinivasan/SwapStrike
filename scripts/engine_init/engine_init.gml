@@ -54,9 +54,10 @@ function engine_init()
 	view_camera[0] = game_camera_get();
 
 	//Audio Groups
-	audio_group_load(audiogroup_music);
-	audio_group_load(audiogroup_sound_effects);
+	audio_group_load(audiogroup_music_menu);
 	audio_group_load(audiogroup_menu);
+	audio_group_load(audiogroup_sound_effects);
+	audio_group_load(audiogroup_music);
 
 	//Garbage collector
 	gc_enable(true);

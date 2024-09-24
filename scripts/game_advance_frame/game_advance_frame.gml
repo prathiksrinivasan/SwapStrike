@@ -11,6 +11,28 @@ function game_advance_frame()
 		player_inputs = argument[0];
 		var _relative_frame = argument_count > 1 ? argument[1] : undefined;
 		
+		#region Saving Replays Online, or if the GGMR Session is in Local Mode
+		if (game_is_online() || instance_number(obj_ggmr_session) > 0)
+			{
+			if (setting().replay_record)
+				{
+				if (_relative_frame != undefined) 
+					{
+					var _recorded = obj_ggmr_session.session_frames[@ _relative_frame][@ GGMR_FRAME.recorded];
+					var _confirmed = obj_ggmr_session.session_frames[@ _relative_frame][@ GGMR_FRAME.confirmed];
+					if (_confirmed && !_recorded) 
+						{
+						with_synced_object(obj_player, function() 
+							{
+							input_replay_save();
+							});
+						obj_ggmr_session.session_frames[@ _relative_frame][@ GGMR_FRAME.recorded] = true;
+						}
+					}
+				}
+			}
+		#endregion
+		
 		#region Update Player Inputs
 		//The order doesn't need to be synced
 		with (obj_player)
@@ -279,7 +301,14 @@ function game_advance_frame()
 					}
 			
 				//Ending the game
-				game_finish();
+				if (game_is_online() || instance_number(obj_ggmr_session) > 0)
+					{
+					ggmr_session_end();
+					}
+				else
+					{
+					game_finish();
+					}
 					
 				return true;
 				}

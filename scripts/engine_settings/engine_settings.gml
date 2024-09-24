@@ -8,9 +8,16 @@ It is automatically run at the start of the game.
 - Cannot be changed during gameplay
 */
 //Version
-#macro game_name						"Platform Fighter Engine: Free Trial" //{string} The name of the game.
-#macro version_string					"1.4.3" //{string} The current game version.
+#macro game_name						"Platform Fighter Engine" //{string} The name of the game.
+#macro version_string					"1.4.4" //{string} The current game version.
 #macro web_export						(os_type == os_operagx || os_browser != browser_not_a_browser) //{bool} Whether the game is using one of the GameMaker web exports (HTML5 or Opera GX) or not.
+
+//Server
+#macro server_key_random_matchmaking	"--" //{string} The key used by the random matchmaking server to make sure the right game is connecting. Should be a long, randomly generated string.
+#macro server_key_private_lobby			"HW3LXPtjvp" //{string} The key used by the private lobby server to make sure the right game is connecting. Should be a long, randomly generated string.
+    
+#macro server_ip_address				"52.1.57.82" //{string} The IP address of the matchmaking server.
+#macro server_port						63567 //{int} The port on the matchmaking server to communicate through.
 
 //Savefiles
 #macro savefile_profiles				"profiles.sav" //{string} The filename to save profile data to.
@@ -34,7 +41,8 @@ It is automatically run at the start of the game.
 #macro match_ex_meter_default			false //{bool} If the EX meter is enabled in matches by default or not.
 
 //Online
-#macro online_win_screen_time_limit		3 //{int} The maximum number of seconds players can stay on the win scren after online matches.
+#macro online_connect_code_length_max	24 //{int} The maximum number of characters that can be in a connect code.
+#macro online_win_screen_time_limit		4 //{int} The maximum number of seconds players can stay on the win scren after online matches.
 #macro quickplay_match_stock			3 //{int} The number of stocks players have in Quickplay matches.
 #macro quickplay_match_time				6 //{int} The amount of time players have in Quickplay matches.
 #macro quickplay_match_stamina			0 //{int} The amount of stamina players have in Quickplay matches.
@@ -191,6 +199,17 @@ function live_values_stored_data()
 	return _data;
 	}
 
+//Server Keys
+function server_keys()
+	{
+	static _keys =
+		{
+		random_matchmaking : server_key_random_matchmaking,
+		private_lobby : server_key_private_lobby,
+		};
+	return _keys;
+	}
+
 //Simple Attacks
 function simple_attack_data()
 	{
@@ -239,6 +258,38 @@ function engine()
 		win_screen_team :				-1, //{int} The number of the team that won, if team mode is on.
 		win_screen_next_room :			rm_css, //{asset} The room to switch to after the win screen.
 		win_screen_time_limit :			-1, //{int} The maximum number of seconds players can spend on the win screen. Setting this to -1 means there is no enforced time limit.
+		
+		//Online
+		is_online :						false, //{bool} Whether the current match is online or not.
+		online_mode :					ONLINE_MODE.quickplay, //{int} The online mode the game is currently in, from the enum ONLINE_MODE.
+		online_is_leader :				false, //{bool} Whether the player is the leader in an online lobby or not.
+		online_leader_connection :		-1, //{int} The connection number to the online leader, if the player is not the leader.
+		online_name :					"PLAYER", //{string} The name used in online lobbies / quickplay. This is not used in-game, since the profile name is used instead.
+		online_show_names :				true, //{bool} Whether the names of players in quickplay are shown or not. This does not affect private lobbies.
+		online_show_connect_codes :		true, //{bool} Whether connect codes for private lobbies are shown or not.
+		online_show_matchmaking :		true, //{bool} Whether the random matchmaking progress is shown or not.
+		online_show_ping :				true, //{bool} Whether to show the ping and input delay in the bottom left corner during online matches or not.
+		online_input_delay :			GGMR_INPUT_DELAY_DEFAULT, //{int} The number of frames of input delay you have online.
+		online_connect_code :			"41", //{string} The default connect code used for private lobbies.
+		online_default_name :			"", //{string} The name of the default profile the player will have in online matches.
+		
+		//Private Lobby
+		private_lobby_json :			"", //{string} The string used to store private lobby data.
+		private_lobby_resume :			false, //{bool} Whether the stored private lobby data should be loaded or not.
+		private_lobby_spectator_ready :	false, //{bool} Whether to automatically ready up if you are a spectator or not.
+		
+		//Random Matchmaking
+		random_match_connection :		-1, //{int} The connection number to the other player in a random match.
+		
+		//Spectators Data
+		spectator_data :				[], //{array} The array spectator data is stored in.
+		
+		//Client Data
+		client_data :					[], //{array} An array of network data for all clients you are connected to. This is essentially a combination of <player_data> and <spectator_data>, but with different properties.
+		
+		//Main Menu News / Annoucements
+		main_menu_fetched_news :		false, //{bool} Whether the main menu has fetched news from the server yet or not. If <web_export> is true, news will never be fetched.
+		main_menu_news :				"", //{string} The news or announcements returned from the server.
 		
 		//Touch Controls
 		touch_stick_type :				TOUCH_STICK_TYPE.absolute, //{int} The type of touch control stick to use, from the TOUCH_STICK_TYPE enum.

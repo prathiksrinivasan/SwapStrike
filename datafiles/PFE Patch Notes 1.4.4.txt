@@ -1,0 +1,23 @@
+Platform Fighter Engine Full Release 1.4.4 - Patch Notes
+(Last Modified: 9/15/2024)
+
+GGMR Update:
+- PFE now uses the most recent version of GGMR.
+- The saving and loading scripts are more organized now.
+
+Attacks
+- General balance adjustments.
+- Added a new attack "basic_fspec_chokeslam".
+- Added a new attack "kessler_grab".
+- Added a new attack "sonic_fspec_spin_dash", as requested by Patreon supporters!
+
+Fixes
+- Fixed an issue where players would occasionally not collide with platforms during hitstun.
+- Changed premade music to "Uncompress on Load", fixing rare issues with looping.
+- Added a new audio group "audiogroup_music_menu" for the main menu music, fixing an issue where it wouldn't load in time to play on the main menu.
+- Fixed a typo where some attacks incorrectly set "is_reeling" instead of "force_reeling".
+
+Extra
+- Changed the "destroy_outside_room" option for projectiles to "destroy_outside_blastzone".
+- "draw_action_lines" now draws the lines in a more random pattern.
+- Renamed "hitbox_attached_group_connected" to just "hitbox_group_connected".

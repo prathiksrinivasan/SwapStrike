@@ -43,7 +43,11 @@ for (var i = 0; i < array_length(_vals); i++)
 	}
 
 //Background animation
-menu_background_color_set($32A9F8);
+menu_background_color_set($7FB252);
+
+//Offline
+engine().is_online = false;
+ggmr_destroy_all();
 
 //Menu Input System
 mis_init();
@@ -133,4 +137,6 @@ player_data_clear();
 spectator_data_clear();
 client_data_clear();
 
+//The game is NOT online
+engine().is_online = false;
 /* Copyright 2024 Springroll Games / Yosi */

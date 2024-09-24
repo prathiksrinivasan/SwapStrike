@@ -144,6 +144,22 @@ if (meta_state == GAME_META_STATE.paused_replay && replay_draw_hud)
 			0,
 			);
 		_y += _pad;
+		if (replay_rewind_enable)
+			{
+			draw_text_and_sprites
+				(
+				_x, _y,
+					[
+					"Rewind (",
+					[spr_icon_input_button_universal, gamepad_button_number(menu_select_button)],
+					" or ",
+					key_to_string(menu_select_key, true),
+					")",
+					],
+				0,
+				);
+			_y += _pad;
+			}
 		draw_text_and_sprites
 			(
 			_x, _y,
@@ -234,6 +250,17 @@ if (meta_state == GAME_META_STATE.paused_replay && replay_draw_hud)
 		draw_rectangle(_x - 2, _y - 2, _x + _w + 2, _y + _h + 2, false);
 		draw_set_color(c_white);
 		draw_rectangle(_x, _y, _x + (_w * (current_frame / engine().replay_total_frames)), _y + _h, false);
+	
+		//Rewind points
+		draw_set_color(c_black);
+		var _points = array_length(replay_rewind_saves);
+		for (var i = 0; i < _points; i++)
+			{
+			var _frame = replay_rewind_saves[@ i].frame;
+			var _cx = _x + (_w * (_frame / engine().replay_total_frames));
+			var _cy = _y + (_h / 2);
+			draw_rectangle(_cx - 1, _cy - 1, _cx + 1, _cy + 1, false);
+			}
 	
 		//KOs
 		var _kos = array_length(engine().replay_player_ko_frames);

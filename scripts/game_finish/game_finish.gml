@@ -28,6 +28,28 @@ function game_finish()
 	if (_online)
 		{
 		stats_set("online_matches", 1, true);
+		
+		//Check if a local player won or not
+		var _online_win = false;
+		for (var i = 0; i < array_length(engine().win_screen_order); i++)
+			{
+			var _player = engine().win_screen_order[@ i];
+			if (_player[@ WIN_SCREEN_DATA.is_winner])
+				{
+				var _num = _player[@ WIN_SCREEN_DATA.player_number];
+				for (var m = 0; m < array_length(obj_ggmr_session.session_clients_local); m++)
+					{
+					var _index = obj_ggmr_session.session_clients_local[@ m];
+					if (_index == _num && ggmr_session_client_get(_index, GGMR_CLIENT.client_type) == GGMR_CLIENT_TYPE.player)
+						{
+						_online_win = true;
+						stats_set("online_wins", 1, true);
+						break;
+						}
+					}
+				}
+			if (_online_win) then break;
+			}
 		}
 	else
 		{

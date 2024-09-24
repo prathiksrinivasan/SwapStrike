@@ -1,5 +1,9 @@
 ///@description
 
+//Offline
+engine().is_online = false;
+ggmr_destroy_all();
+				
 //Menu Input System
 mis_init();
 mis_auto_connect_enable(true);
@@ -50,6 +54,24 @@ array_push(options_array, { name : "Performance Mode", current : setting().perfo
 	desc : "Turn off all visual effects and some shaders to increase performance." });
 array_push(options_array, { name : "Disable Shaders", current : setting().disable_shaders, display : "bool",
 	desc : "Turn off all shaders to increase drawing performance. Use at your own risk!" });
+if (!web_export)
+	{
+	array_push(options_array, "Online");
+	array_push(options_array, { name : "Username", current : engine().online_name, display : "string",
+		desc : "The username that will be displayed for online lobbies and quickplay." });
+	array_push(options_array, { name : "Default Profile", current : profile_find(engine().online_default_name), display : "profile",
+		desc : "The default profile that will be selected on the character select screen." }); 
+	array_push(options_array, { name : "Show Usernames", current : engine().online_show_names, display : "bool",
+		desc : "Display the usernames of players in quickplay. This does not affect private lobbies." });
+	array_push(options_array, { name : "Show Connect Codes", current : engine().online_show_connect_codes, display : "bool",
+		desc : "Display connect codes in private lobbies." });
+	array_push(options_array, { name : "Show Matchmaking Progress", current : engine().online_show_matchmaking, display : "bool",
+		desc : "Display the progress of matchmaking in quickplay." });
+	array_push(options_array, { name : "Show Ping", current : engine().online_show_ping, display : "bool",
+		desc : "Display the ping and average rollback frames during online matches." });
+	array_push(options_array, { name : "Auto Ready when Spectating", current : engine().private_lobby_spectator_ready, display : "bool",
+		desc : "Automatically ready up when are you a spectator in a private lobby." });
+	}
 array_push(options_array, "Extra");
 array_push(options_array, { name : "Record Replays", current : setting().replay_record, display : "bool",
 	desc : "Whether to record replays during matches and allow replay saving on the win screen." });

@@ -11,8 +11,8 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "audiogroup_music",
-    "path": "audiogroups/audiogroup_music",
+    "name": "audiogroup_music_menu",
+    "path": "audiogroups/audiogroup_music_menu",
   },
   "soundFile": "song_menu.mp3",
   "duration": 72.0457,

@@ -7,6 +7,7 @@ This allows the instance to be detected by <with_synced_object>.
 function sync_id_register()
 	{
 	ggmr_assert(instance_number(obj_sync_id_system) > 0, "obj_sync_id_system did not exist when sync_id_register was called");
+	
 	//Add to sync grid
 	for (var i = 0; i < ds_grid_height(obj_sync_id_system.sync_grid); i++) 
 		{
@@ -38,4 +39,5 @@ function sync_id_register()
 		}
 	return false;
 	}
+
 /* Copyright 2024 Springroll Games / Yosi */

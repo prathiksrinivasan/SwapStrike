@@ -219,12 +219,26 @@ if (active && !popup_is_open())
 					case "Damage Number VFX": setting().show_damage_numbers = _v; break;
 					case "Offscreen Radar": setting().show_offscreen_radar = _v; break;
 					case "Knockback Cloud Trails": setting().knockback_trails_enable = _v; break;
+					case "Show Usernames": engine().online_show_names = _v; break;
+					case "Show Connect Codes": engine().online_show_connect_codes = _v; break;
+					case "Show Matchmaking Progress": engine().online_show_matchmaking = _v; break;
+					case "Show Ping": engine().online_show_ping = _v; break;
+					case "Auto Ready when Spectating": engine().private_lobby_spectator_ready = _v; break;
 					case "Performance Mode": setting().performance_mode = _v; break;
 					case "Disable Shaders": setting().disable_shaders = _v; break;
+					case "Username": engine().online_name = _v; break;
 					case "Record Replays": setting().replay_record = _v; break;
 					case "Record Clips": setting().clip_record = _v; break;
 					case "Hold to Pause": setting().pause_hold_input = _v; break;
 					case "Debug Mode": setting().debug_mode_enable = _v; break;
+					case "Default Profile": 
+						//Get the profile name based on the profile index
+						engine().online_default_name = "";
+						if (profile_exists(_v))
+							{
+							engine().online_default_name = profile_get(_v, PROFILE.name);
+							}
+						break;
 					default: crash("[obj_options_ui: End Step] Option is invalid (", _option.name, ")"); 
 					}
 				}
@@ -235,7 +249,7 @@ if (active && !popup_is_open())
 			if (setting().volume_music != _previous_volume)
 				{
 				audio_stop_all();
-				audio_play_sound_adjusted(song_menu, 0, true, audiogroup_music);
+				audio_play_sound_adjusted(song_menu, 0, true, audiogroup_music_menu);
 				}
 			
 			//Open the sidebar

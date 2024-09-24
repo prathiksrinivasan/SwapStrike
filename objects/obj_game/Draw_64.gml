@@ -863,6 +863,11 @@ if (state == GAME_STATE.startup)
 		draw_sprite(spr_game_options_icons, 2, _x, _y);
 		_x += _pad;
 		}
+	if (setting().debug_sync_test)
+		{
+		draw_sprite(spr_game_options_icons, 3, _x, _y);
+		_x += _pad;
+		}
 	}
 #endregion
 

@@ -1,7 +1,7 @@
 function main_menu_ui_button_web_create()
 	{
 	//Disable the button on web exports
-	if (web_export || true)
+	if (web_export)
 		{
 		var _c = c_ltgray;
 		color_normal = _c;

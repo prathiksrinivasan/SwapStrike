@@ -20,9 +20,18 @@ function main_menu_sidebar_choose()
 			break;
 		case 1:
 			//Online quickplay match
+			if (room != rm_random_matchmaking)	
+				{
+				room_goto(rm_random_matchmaking);
+				}
 			break;
 		case 2:
 			//Online lobby
+			if (room != rm_private_lobby)
+				{
+				engine().private_lobby_resume = false;
+				room_goto(rm_private_lobby);
+				}
 			break;
 		case 3:
 			//Replays

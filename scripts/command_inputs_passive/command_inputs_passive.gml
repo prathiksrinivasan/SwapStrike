@@ -43,6 +43,29 @@ function command_inputs_passive()
 						}
 					}
 				*/
+				
+				//Chokeslam
+				/*
+				if (attack_script != spiderman_fspec_chokeslam)
+					{
+					if (input_pressed(INPUT.special, buffer_time_standard, false))
+						{
+						//You can do the input in either direction, and it will turn you around
+						if (input_motion([4, [7, 8, 9], 6], Lstick))
+							{
+							input_reset(INPUT.special);
+							attack_start(spiderman_fspec_chokeslam);
+							}
+						else if (input_motion([6, [7, 8, 9], 4], Lstick))
+							{
+							facing *= -1;
+							input_reset(INPUT.special);
+							attack_start(spiderman_fspec_chokeslam);
+							}
+						}
+					}
+				*/
+				
 				//Power Geyser
 				if (attack_script != terry_power_geyser)
 					{

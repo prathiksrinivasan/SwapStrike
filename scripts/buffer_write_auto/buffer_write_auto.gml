@@ -71,10 +71,11 @@ function buffer_write_auto()
 		} 
 	else
 		{
-		buffer_write(_b, buffer_s8, buffer_s32);
-		buffer_write(_b, buffer_s32, _val);
+		buffer_write(_b, buffer_s8, buffer_f64);
+		buffer_write(_b, buffer_f64, _val);
 		//As of Runtime v2022.6.0.23: Instances IDs are no longer detected as numbers and would trigger the crash, so the default case must save numbers
 		//ggmr_crash("[buffer_write_auto] Value is not a recognized type! (", _val, ", ", typeof(_val), ")");
 		}
 	}
+
 /* Copyright 2024 Springroll Games / Yosi */

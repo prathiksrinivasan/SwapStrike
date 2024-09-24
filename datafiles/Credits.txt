@@ -1,8 +1,8 @@
 (Platform Fighter Engine - Credits)
-(Last Modified: 7/16/23)
+(Last Modified: 9/1/2024)
 
 
-[Yosi] - Code, Sprites, Sound Effects
+[Yosi Spring (Josiah Chen)] - Code, Sprites, Sound Effects
 	<https://yosispring.github.io>
 
 [BumiBomber] - Stage Art, Moveset Design, Sprites
@@ -21,10 +21,12 @@
 - Ben Lehocky <https://twitter.com/BenLehocky>
 - Dan Fornace <https://twitter.com/danfornace>
 - Kingston Simmons
+- Craftis (Patreon)
 
 -----------------------------------------------------------------------------------
 
 [Extra Information]:
-- Join our Discord: <https://discordapp.com/invite/kTX3pug>
+- Join Our Discord: <https://discordapp.com/invite/kTX3pug>
 - Official Website: <https://platformfighterengine.github.io>
-- Youtube: <https://www.youtube.com/@PlatformFighterEngine>
+- YouTube: <https://www.youtube.com/@PlatformFighterEngine>
+- Patreon: <https://www.patreon.com/YosiSpring>

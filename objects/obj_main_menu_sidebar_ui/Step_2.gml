@@ -29,7 +29,7 @@ if (menu_active)
 				}
 			
 			//Skip over web choices
-			if (web_export || true)
+			if (web_export)
 				{
 				while (!menu_choices[@ menu_choice_current[@ i]].web)
 					{

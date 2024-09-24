@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "song_stage_biosphere1",
   "conversionMode": 0,
-  "compression": 1,
+  "compression": 2,
   "volume": 0.65,
   "preload": false,
   "bitRate": 128,

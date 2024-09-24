@@ -11,9 +11,19 @@ is_loading = false; //Ensures that GAME_STATE_OBJECTS created on room start won'
 
 sync_id_system_init([obj_player, obj_entity, obj_vfx, obj_block_moving, obj_hitbox, obj_hurtbox]);
 
+//Online mode
+if (engine().is_online)
+	{
+	instance_change(obj_game_online, false);
+	}
 //Replay mode
-if (setting().replay_mode)
+else if (setting().replay_mode)
 	{
 	instance_change(obj_game_replay, false);
+	}
+//Negative input delay
+else if (setting().negative_input_delay != 0)
+	{
+	instance_change(obj_game_negative, false);
 	}
 /* Copyright 2024 Springroll Games / Yosi */

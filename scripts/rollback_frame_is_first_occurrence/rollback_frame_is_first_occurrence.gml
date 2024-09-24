@@ -7,7 +7,7 @@ function rollback_frame_is_first_occurrence()
 	{
 	if (game_is_online())
 		{
-		return false;
+		return ggmr_session_frame_is_first_occurrence(obj_ggmr_session.session_running_relative_frame);
 		}
 	else return true;
 	}

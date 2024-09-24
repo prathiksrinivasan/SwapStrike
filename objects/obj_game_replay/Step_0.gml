@@ -29,14 +29,58 @@ if (meta_state == GAME_META_STATE.running || go_to_next_frame)
 	
 	repeat (_number_of_frames)
 		{
+		//Rewind saves
+		if (replay_rewind_enable && current_frame % replay_rewind_interval == 0)
+			{
+			var _b = buffer_create(1, buffer_grow, 1);
+			game_state_save(_b);
+			var _p = buffer_tell(replay_data_get().buffer);
+			array_push
+				(
+				replay_rewind_saves, 
+					{
+					buffer : _b,
+					position : _p,
+					frame : current_frame,
+					},
+				);
+			if (array_length(replay_rewind_saves) > replay_rewind_saves_max)
+				{
+				array_delete(replay_rewind_saves, 0, 1);
+				}
+			}
+			
 		//Reading inputs from the replay buffer
 		with_synced_object(obj_player, function() 
 			{
 			input_replay_load();
 			});
+		
+		//Sync Test
+		if (setting().debug_sync_test)
+			{
+			game_state_save(game_state_buffer);
+			}
 
 		//Advance the frame
 		var _ended = game_advance_frame(player_inputs);
+	
+		//Sync Test
+		if (setting().debug_sync_test)
+			{
+			//Check that the game hasn't ended
+			if (state != GAME_STATE.ending)
+				{
+				//Compare the game states
+				var _expected = game_state_hash();
+				game_state_load(game_state_buffer);
+				game_advance_frame(player_inputs);
+				var _actual = game_state_hash();
+				assert(_actual == _expected, "[obj_game: Step] Actual game state does not match the expected game state! Actual: ", _actual, " | Expected: ", _expected);
+				}
+			//Clear the paused inputs
+			paused_inputs_flag = 0;
+			}
 		
 		//Clips - Save every other frame
 		if ((current_frame + game_end_frame) % clip_save_interval == 0)
@@ -204,6 +248,23 @@ if (meta_state == GAME_META_STATE.paused_replay)
 					case "Frame Advance":
 						go_to_next_frame = true;
 						exit;
+					case "Rewind":
+						if (replay_rewind_enable)
+							{
+							//Load the last saved frame
+							var _len = array_length(replay_rewind_saves);
+							if (_len > 0)
+								{
+								var _struct = replay_rewind_saves[@ _len - 1];
+								game_state_load(_struct.buffer);
+								buffer_seek(replay_data_get().buffer, buffer_seek_start, _struct.position);
+								array_delete(replay_rewind_saves, _len - 1, 1);
+								}
+								
+							//Return control to the replay
+							replay_took_control = false;
+							}
+						exit;
 					case "Take Control":
 						replay_took_control = true;
 						
@@ -303,11 +364,19 @@ if (meta_state == GAME_META_STATE.paused_replay)
 					device = mis_device_get(obj_game.replay_control_device, MIS_DEVICE_PROPERTY.port_number);
 					device_type = mis_device_convert_to_game_device(mis_device_get(obj_game.replay_control_device, MIS_DEVICE_PROPERTY.device_type));
 					
-					//If there are no custom controls set
+					//If there are no custom controls set, go to the default online profile
 					if (array_equals(custom_controls, []))
 						{
-						var _struct = custom_controls_create();
-						custom_controls = custom_controls_unpack(_struct, device_type);
+						var _profile = profile_find(engine().online_default_name);
+						if (_profile != -1)
+							{
+							custom_controls = custom_controls_unpack(profile_get(_profile, PROFILE.custom_controls), device_type);
+							}
+						else
+							{
+							var _struct = custom_controls_create();
+							custom_controls = custom_controls_unpack(_struct, device_type);
+							}
 						}
 					
 					//Get the inputs
@@ -338,11 +407,25 @@ if (meta_state == GAME_META_STATE.paused_replay)
 		go_to_next_frame = true;
 		exit;
 		}
-
-	//Quitting control mode
-	if (_select && replay_took_control)
+		
+	//Rewind
+	if (_select)
 		{
-		game_finish(engine().win_screen_next_room);
+		if (replay_rewind_enable)
+			{
+			//Load the last saved frame
+			var _len = array_length(replay_rewind_saves);
+			if (_len > 0)
+				{
+				var _struct = replay_rewind_saves[@ _len - 1];
+				game_state_load(_struct.buffer);
+				buffer_seek(replay_data_get().buffer, buffer_seek_start, _struct.position);
+				array_delete(replay_rewind_saves, _len - 1, 1);
+				}
+				
+			//Return control to the replay
+			replay_took_control = false;
+			}
 		exit;
 		}
 	}

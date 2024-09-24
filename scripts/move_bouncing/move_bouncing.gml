@@ -27,7 +27,7 @@ function move_bouncing()
 			y = ceil(_ty);
 			
 			//Attempt to move players out of blocks if they would snap into one
-			if (collision(x, y, [FLAG.solid]))
+			if (collision(x, y, [FLAG.solid, FLAG.plat], false, obj_collidable, true))
 				{
 				x = floor(_tx);
 				y = floor(_ty);

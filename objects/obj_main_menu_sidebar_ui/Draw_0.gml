@@ -38,7 +38,7 @@ for (var i = 0; i < array_length(menu_choices); i++)
 		}
 		
 	//Ooptions that are disabled on web exports
-	if (web_export || true)
+	if (web_export)
 		{
 		if (!_choice.web)
 			{

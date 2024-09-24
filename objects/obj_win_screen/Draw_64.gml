@@ -154,7 +154,7 @@ if (state_phase >= 2)
 	for (var i = 0; i < _kos; i++)
 		{
 		var _data = _m.replay_player_ko_frames[@ i];
-		var _p = (_data.frame / _m.replay_total_frames);
+		var _p = (_data.frame / real(_m.replay_total_frames));
 		var _palette_column_arrays = character_data_get(_data.character, CHARACTER_DATA.palette_column_arrays);
 		palette_shader_simple_set(_palette_column_arrays[@ 0], _palette_column_arrays[@ _data.color]);
 		draw_sprite_ext(character_data_get(_data.character, CHARACTER_DATA.stock_sprite), 0, _x + (_w * _p), _y - (_pad * _data.number), 2, 2, 0, c_white, 1);

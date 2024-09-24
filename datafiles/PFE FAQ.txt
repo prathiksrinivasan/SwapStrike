@@ -29,7 +29,7 @@ Can I sell what I make with PFE?
 	Yes, you can make commercial games with PFE, as long as you don't share the source code. You can read the full license on the website (https://platformfighterengine.github.io/#/about).
 
 Why does the project in GameMaker run slower than the demo executable?
-	The demo is compiled using YYC, which converts GML code to C++, allowing it to run much faster. Check out the Official YYC Guide (https://help.yoyogames.com/hc/en-us/articles/235186048-Setting-Up-For-Windows) to learn how to use YYC.
+	The demo is compiled using YYC, which converts GML code to C++, allowing it to run much faster. Check out the Official YYC Guide (https://help.gamemaker.io/hc/en-us/articles/235186048-Setting-Up-For-Windows) to learn how to use YYC.
 
 Can I make a singleplayer story mode in PFE?
 	It's possible, but there is no built-in template for singleplayer modes.

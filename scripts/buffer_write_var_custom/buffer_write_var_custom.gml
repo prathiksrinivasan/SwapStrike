@@ -32,31 +32,37 @@ function buffer_write_var_custom()
 	    case buffer_custom_undefined:
     		buffer_write(_b, buffer_s8, buffer_custom_undefined);
     		buffer_write(_b, buffer_u8, 0);
-    		break;
+    	break;
+		
     	case buffer_custom_array:
 			buffer_write(_b, buffer_s8, buffer_custom_array);
 			buffer_write(_b, buffer_s8, is_undefined(_inner) ? buffer_custom_undefined : _inner);
     		buffer_write_array(_b, _val, _inner);
-    		break;
+    	break;
+		
     	case buffer_custom_list:
 			buffer_write(_b, buffer_s8, buffer_custom_list);
 			buffer_write(_b, buffer_s8, is_undefined(_inner) ? buffer_custom_undefined : _inner);
     		buffer_write_list(_b, _val, _inner);
-    		break;
+    	break;
+		
     	case buffer_custom_map:
 			buffer_write(_b, buffer_s8, buffer_custom_map);
 			buffer_write(_b, buffer_s8, is_undefined(_inner) ? buffer_custom_undefined : _inner);
     		buffer_write_map(_b, _val, _inner);
-    		break;
+    	break;
+		
     	case buffer_custom_struct:
 			buffer_write(_b, buffer_s8, buffer_custom_struct);
 			buffer_write(_b, buffer_s8, is_undefined(_inner) ? buffer_custom_undefined : _inner);
     		buffer_write_struct(_b, _val, _inner);
-    		break;
+    	break;
+		
     	default:
         	buffer_write(_b, buffer_s8, _type);
         	buffer_write(_b, _type, _val);
-    		break;
+    	break;
 	    }
 	}
+
 /* Copyright 2024 Springroll Games / Yosi */

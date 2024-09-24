@@ -17,7 +17,23 @@ function game_sound_play()
 	var _snd = argument[0];
 	var _x = argument_count > 1 ? argument[1] : x;
 	
-	var _index = sound_system_play(_snd, false, 5, 5, 0, true, _x);
-	return _index;
+	//In Online matches, or if the GGMR session is in local mode, sounds cannot be replayed as fast to avoid duplicated sounds
+	if (game_is_online() || instance_number(obj_ggmr_session) > 0)
+		{
+		if (!rollback_frame_is_first_occurrence())
+			{
+			return undefined;
+			}
+		else
+			{
+			var _index = sound_system_play(_snd, false, 5, GGMR_MAX_FRAMES_STORED, 0, true, _x);
+			return _index;
+			}
+		}
+	else
+		{
+		var _index = sound_system_play(_snd, false, 5, 5, 0, true, _x);
+		return _index;
+		}
 	}
 /* Copyright 2024 Springroll Games / Yosi */

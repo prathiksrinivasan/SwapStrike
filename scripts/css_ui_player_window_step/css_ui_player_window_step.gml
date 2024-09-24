@@ -208,6 +208,11 @@ function css_ui_player_window_step()
 						css_player_set(player_id, CSS_PLAYER.profile, _profile);
 						//Save profiles
 						profile_save_all();
+						//If there is no online default profile set right now, set the newly create profile
+						if (engine().online_default_name == "" || !profile_exists(profile_find(engine().online_default_name), true))
+							{
+							engine().online_default_name = profile_new_name;
+							}
 						//Re-activate cursor
 						state = CSS_PLAYER_WINDOW_STATE.select_character;
 						_custom.cursor_active = true;

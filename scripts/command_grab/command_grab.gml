@@ -6,6 +6,7 @@
 /*
 Grabs the given player WITHOUT changing the attacking player to the "grabbing" state.
 This is different from grab hitboxes, which will cancel the current attack and leave the player in the "grabbing" state on hit.
+The target will not be moved towards the held position unless you call <grab_snap_move> afterwards, or if you manually move the target.
 If <grab_break_enable> is true, you can decide if the command grab can be broken or not. If you do not specify, the <grab_break_command_grabs_default> is used.
 */
 function command_grab()

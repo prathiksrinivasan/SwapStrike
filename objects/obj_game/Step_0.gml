@@ -63,9 +63,32 @@ if (meta_state == GAME_META_STATE.running || go_to_next_frame)
 		//Make sure that inputs are only collected on the first iteration
 		//Otherwise, there will be issues with device "presses" being counted twice in the same frame
 		_first_iteration = false;
+		
+		//Sync Test
+		if (setting().debug_sync_test)
+			{
+			game_state_save(game_state_buffer);
+			}
 
 		//Advance the frame
 		var _ended = game_advance_frame(player_inputs);
+	
+		//Sync Test
+		if (setting().debug_sync_test)
+			{
+			//Check that the game hasn't ended
+			if (state != GAME_STATE.ending)
+				{
+				//Compare the game states
+				var _expected = game_state_hash();
+				game_state_load(game_state_buffer);
+				game_advance_frame(player_inputs);
+				var _actual = game_state_hash();
+				assert(_actual == _expected, "[obj_game: Step] Actual game state does not match the expected game state! Actual: ", _actual, " | Expected: ", _expected);
+				}
+			//Clear the paused inputs
+			paused_inputs_flag = 0;
+			}
 		
 		//Clips - Save every other frame
 		if ((current_frame + game_end_frame) % clip_save_interval == 0)

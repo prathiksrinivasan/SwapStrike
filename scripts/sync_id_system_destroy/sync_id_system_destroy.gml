@@ -19,4 +19,5 @@ function sync_id_system_destroy()
 		instance_destroy();
 		}
 	}
+
 /* Copyright 2024 Springroll Games / Yosi */

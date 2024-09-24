@@ -34,4 +34,5 @@ function buffer_read_struct()
 	
 	return _s;
 	}
+
 /* Copyright 2024 Springroll Games / Yosi */
