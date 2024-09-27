@@ -525,6 +525,7 @@
     {"id":{"name":"enums","path":"scripts/enums/enums.yy",},"order":18,},
     {"id":{"name":"fade_shader_set","path":"scripts/fade_shader_set/fade_shader_set.yy",},"order":7,},
     {"id":{"name":"scalar_fair","path":"scripts/scalar_fair/scalar_fair.yy",},"order":9,},
+    {"id":{"name":"dspec_teleport","path":"scripts/dspec_teleport/dspec_teleport.yy",},"order":167,},
     {"id":{"name":"ggmr_net_ping_current","path":"scripts/ggmr_net_ping_current/ggmr_net_ping_current.yy",},"order":12,},
     {"id":{"name":"bayonetta_fair","path":"scripts/bayonetta_fair/bayonetta_fair.yy",},"order":43,},
     {"id":{"name":"ggmr_lobby_size","path":"scripts/ggmr_lobby_size/ggmr_lobby_size.yy",},"order":22,},
