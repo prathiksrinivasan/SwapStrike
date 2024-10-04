@@ -6,13 +6,12 @@ function character_test_init()
 		crash("Trying to run a character init script on an instance that is not an obj_player!\n",
 			"This may be caused by putting parentheses after a script name in character_data.\n");
 		}
-		
+
 	//Determine which variables to set
 	var _set_properties = argument_count > 0 ? argument[0] : true;
 	var _set_states = argument_count > 1 ? argument[1] : true;
 	var _set_attacks = argument_count > 2 ? argument[2] : true;
 	var _set_sprites = argument_count > 3 ? argument[3] : true;
-	
 	//Properties
 	if (_set_properties)
 		{
@@ -233,7 +232,7 @@ function character_test_init()
 		my_attacks[$ "Utilt"		] = -1;
 		my_attacks[$ "Dtilt"		] = -1;
 				 
-		my_attacks[$ "Fsmash"		] = -1;
+		my_attacks[$ "Fsmash"		] = chrom_fsmash;
 		my_attacks[$ "Usmash"		] = -1;
 		my_attacks[$ "Dsmash"		] = -1;
 				 
@@ -245,7 +244,7 @@ function character_test_init()
 				 
 		my_attacks[$ "Nspec"		] = -1;
 		my_attacks[$ "Fspec"		] = -1;
-		my_attacks[$ "Uspec"		] = -1;
+		my_attacks[$ "Uspec"		] = uspec;
 		my_attacks[$ "Dspec"		] = -1;
 				 
 		my_attacks[$ "Grab"			] = -1;

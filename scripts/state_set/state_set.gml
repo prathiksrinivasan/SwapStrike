@@ -1,4 +1,4 @@
-///@category Player Actions
+///@category Player Actions	
 ///@param {int} state		The state, from the PLAYER_STATE enum
 /*
 Sets the state of the calling player.

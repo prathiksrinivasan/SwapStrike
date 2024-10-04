@@ -327,6 +327,7 @@
     {"id":{"name":"character_scalar_init","path":"scripts/character_scalar_init/character_scalar_init.yy",},"order":1,},
     {"id":{"name":"check_aerial","path":"scripts/check_aerial/check_aerial.yy",},"order":5,},
     {"id":{"name":"check_airdodge","path":"scripts/check_airdodge/check_airdodge.yy",},"order":6,},
+    {"id":{"name":"shuffle","path":"scripts/shuffle/shuffle.yy",},"order":4,},
     {"id":{"name":"fnt_credits_bold","path":"fonts/fnt_credits_bold/fnt_credits_bold.yy",},"order":9,},
     {"id":{"name":"blastzones_check","path":"scripts/blastzones_check/blastzones_check.yy",},"order":32,},
     {"id":{"name":"check_crouch","path":"scripts/check_crouch/check_crouch.yy",},"order":8,},

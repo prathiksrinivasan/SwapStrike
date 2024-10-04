@@ -5,6 +5,10 @@ All values here are default values only, and may be changed immediately after th
 */
 function player_init_start()
 	{
+	
+	//Specials
+	uspec = cloud_uspec
+	
 	//Character
 	character = 0;
 	character_script = -1;

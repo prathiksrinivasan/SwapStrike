@@ -120,6 +120,7 @@ function cloud_uspec()
 				if (attack_frame == 0)
 					{
 					attack_stop(PLAYER_STATE.helpless);
+					shuffle();
 					}
 				break;
 				}
