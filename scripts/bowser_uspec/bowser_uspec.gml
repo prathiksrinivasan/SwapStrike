@@ -208,6 +208,7 @@ function bowser_uspec()
 					{
 					anim_angle = 0;
 					attack_stop(PLAYER_STATE.helpless);
+					discard_special();
 					}
 				break;
 				}
@@ -344,6 +345,7 @@ function bowser_uspec()
 					{
 					anim_angle = 0;
 					attack_stop(PLAYER_STATE.helpless);
+					discard_special();
 					}
 				break;
 				}

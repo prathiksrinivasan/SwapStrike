@@ -6,8 +6,17 @@ All values here are default values only, and may be changed immediately after th
 function player_init_start()
 	{
 	
-	//Specials
-	uspec = cloud_uspec
+	//Special - Up Side Down order
+	specials_list = [
+	[cloud_uspec, cloud_fspec_cross_slash, basic_dspec_counter],
+	[bowser_uspec, basic_fspec_cloudburst, diddy_dspec_banana],]
+	curr_special = specials_list[0];
+	special_deck = ds_stack_create();
+	for (var i = 0; i < array_length(specials_list); i++)
+	{
+		ds_stack_push(special_deck, specials_list[i]);
+	}
+	
 	
 	//Character
 	character = 0;

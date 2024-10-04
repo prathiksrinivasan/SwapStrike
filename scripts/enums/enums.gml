@@ -10,6 +10,13 @@ enum GAME_META_STATE
 	saving_clip,
 	paused_replay,
 	}
+	
+enum SPECIAL_DIR
+	{
+	up,
+	side,
+	down
+	}
 enum GAME_STATE
 	{
 	startup,

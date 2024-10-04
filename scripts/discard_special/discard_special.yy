@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "shuffle",
+  "name": "discard_special",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
