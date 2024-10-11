@@ -8,6 +8,8 @@ If the player has been parried (Parry Press), they enter the parry stun state.
 */
 function attack_stop()
 	{
+		
+	discard_special();
 	var run = true;
 
 	//Reset attacking variables

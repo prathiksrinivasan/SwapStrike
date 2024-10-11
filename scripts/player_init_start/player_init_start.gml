@@ -7,16 +7,13 @@ function player_init_start()
 	{
 	
 	//Special - Neutral Side Down order
-	//Note: currently only cloud and bowser upspecials call the discard_special function.
+	//Note: great
 	specials_list = [
 	special_define(cloud_uspec, cloud_fspec_cross_slash, basic_dspec_counter),
 	special_define(bowser_uspec, basic_fspec_cloudburst, diddy_dspec_banana)]
 	curr_special = specials_list[0];
 	special_deck = ds_stack_create();
-	for (var i = 0; i < array_length(specials_list); i++)
-	{
-		ds_stack_push(special_deck, specials_list[i]);
-	}
+	reshuffle_specials();
 	
 	
 	//Character
