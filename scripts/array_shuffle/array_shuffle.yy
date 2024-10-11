@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "reshuffle_specials",
+  "name": "array_shuffle",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Specials",
-    "path": "folders/[Engine]/Attacking/Specials.yy",
+    "name": "Functions",
+    "path": "folders/[Engine]/Functions.yy",
   },
 }

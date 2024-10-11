@@ -9,8 +9,9 @@ function player_init_start()
 	//Special - Neutral Side Down order
 	//Note: great
 	specials_list = [
-	special_define(cloud_uspec, cloud_fspec_cross_slash, basic_dspec_counter),
-	special_define(bowser_uspec, basic_fspec_cloudburst, diddy_dspec_banana)]
+		special_define("John", cloud_uspec, cloud_fspec_cross_slash, basic_dspec_counter),
+		special_define("Jerry", bowser_uspec, basic_fspec_cloudburst, diddy_dspec_banana)
+	]
 	curr_special = specials_list[0];
 	special_deck = ds_stack_create();
 	reshuffle_specials();

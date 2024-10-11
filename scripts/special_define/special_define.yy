@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Attacking",
-    "path": "folders/[Engine]/Attacking.yy",
+    "name": "Specials",
+    "path": "folders/[Engine]/Attacking/Specials.yy",
   },
 }

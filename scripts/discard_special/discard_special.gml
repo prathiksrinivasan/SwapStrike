@@ -8,12 +8,10 @@ function discard_special(){
 	}
 	curr_special = ds_stack_pop(special_deck);
 	
-	show_debug_message(curr_special);
 	my_attacks[$ "Uspec"] = curr_special.neutral;
 	my_attacks[$ "NSpec"] = curr_special.neutral;
 	my_attacks[$ "Fspec"] = curr_special.side;
 	my_attacks[$ "Dspec"] = curr_special.down;
 				 
-	show_debug_message("here i am");
 	 
 }
