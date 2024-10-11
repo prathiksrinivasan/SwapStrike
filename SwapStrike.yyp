@@ -1338,6 +1338,7 @@
     {"id":{"name":"snd_snake_dspec_c4","path":"sounds/snd_snake_dspec_c4/snd_snake_dspec_c4.yy",},"order":0,},
     {"id":{"name":"snd_hit_electro","path":"sounds/snd_hit_electro/snd_hit_electro.yy",},"order":0,},
     {"id":{"name":"__optimized_save_obj_hitbox_projectile","path":"scripts/__optimized_save_obj_hitbox_projectile/__optimized_save_obj_hitbox_projectile.yy",},"order":24,},
+    {"id":{"name":"special_define","path":"scripts/special_define/special_define.yy",},"order":5,},
     {"id":{"name":"obj_verlet_point","path":"objects/obj_verlet_point/obj_verlet_point.yy",},"order":0,},
     {"id":{"name":"snd_hit_explosion0","path":"sounds/snd_hit_explosion0/snd_hit_explosion0.yy",},"order":1,},
     {"id":{"name":"obj_verlet_stick","path":"objects/obj_verlet_stick/obj_verlet_stick.yy",},"order":3,},

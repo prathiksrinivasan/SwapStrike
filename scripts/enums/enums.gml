@@ -11,12 +11,7 @@ enum GAME_META_STATE
 	paused_replay,
 	}
 	
-enum SPECIAL_DIR
-	{
-	up,
-	side,
-	down
-	}
+
 enum GAME_STATE
 	{
 	startup,

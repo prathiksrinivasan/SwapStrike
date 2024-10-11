@@ -242,10 +242,10 @@ function character_test_init()
 		my_attacks[$ "Uair"			] = -1;
 		my_attacks[$ "Dair"			] = -1;
 				 
-		my_attacks[$ "Nspec"		] = -1;
-		my_attacks[$ "Uspec"		] = curr_special[SPECIAL_DIR.up];
-		my_attacks[$ "Fspec"		] = curr_special[SPECIAL_DIR.side];
-		my_attacks[$ "Dspec"		] = curr_special[SPECIAL_DIR.down];
+		my_attacks[$ "Nspec"		] = curr_special.neutral;
+		my_attacks[$ "Uspec"		] = curr_special.neutral;
+		my_attacks[$ "Fspec"		] = curr_special.side;
+		my_attacks[$ "Dspec"		] = curr_special.down;
 				 
 		my_attacks[$ "Grab"			] = -1;
 		my_attacks[$ "Dash_Grab"	] = -1;
