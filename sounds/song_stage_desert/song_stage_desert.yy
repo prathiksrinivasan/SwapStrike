@@ -18,6 +18,6 @@
   "duration": 315.03674,
   "parent": {
     "name": "Desert",
-    "path": "folders/Stages/Desert.yy",
+    "path": "folders/Stages/TemplateStages/Desert.yy",
   },
 }

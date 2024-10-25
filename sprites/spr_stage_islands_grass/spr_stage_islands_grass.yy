@@ -75,6 +75,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Islands",
-    "path": "folders/Stages/Islands.yy",
+    "path": "folders/Stages/TemplateStages/Islands.yy",
   },
 }

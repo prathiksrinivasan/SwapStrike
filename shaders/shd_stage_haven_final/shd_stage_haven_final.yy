@@ -5,6 +5,6 @@
   "type": 1,
   "parent": {
     "name": "Shaders",
-    "path": "folders/Stages/Haven/Shaders.yy",
+    "path": "folders/Stages/TemplateStages/Haven/Shaders.yy",
   },
 }

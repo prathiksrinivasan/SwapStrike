@@ -31,6 +31,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Objects",
-    "path": "folders/Stages/Factory/Objects.yy",
+    "path": "folders/Stages/TemplateStages/Factory/Objects.yy",
   },
 }

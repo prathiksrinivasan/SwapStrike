@@ -106,6 +106,6 @@
   },
   "parent": {
     "name": "Walkoff",
-    "path": "folders/Stages/Walkoff.yy",
+    "path": "folders/Stages/TemplateStages/Walkoff.yy",
   },
 }

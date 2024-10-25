@@ -69,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Sprites",
-    "path": "folders/Stages/Campgrounds/Sprites.yy",
+    "path": "folders/Stages/TemplateStages/Campgrounds/Sprites.yy",
   },
 }

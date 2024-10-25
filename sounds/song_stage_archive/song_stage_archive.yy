@@ -18,6 +18,6 @@
   "duration": 345.62613,
   "parent": {
     "name": "Archive",
-    "path": "folders/Stages/Archive.yy",
+    "path": "folders/Stages/TemplateStages/Archive.yy",
   },
 }

@@ -97,6 +97,6 @@
   },
   "parent": {
     "name": "Sprites",
-    "path": "folders/Stages/Factory/Sprites.yy",
+    "path": "folders/Stages/TemplateStages/Factory/Sprites.yy",
   },
 }

@@ -133,6 +133,6 @@
   },
   "parent": {
     "name": "Campgrounds",
-    "path": "folders/Stages/Campgrounds.yy",
+    "path": "folders/Stages/TemplateStages/Campgrounds.yy",
   },
 }

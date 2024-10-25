@@ -178,6 +178,6 @@
   },
   "parent": {
     "name": "Wavy",
-    "path": "folders/Stages/Wavy.yy",
+    "path": "folders/Stages/TemplateStages/Wavy.yy",
   },
 }

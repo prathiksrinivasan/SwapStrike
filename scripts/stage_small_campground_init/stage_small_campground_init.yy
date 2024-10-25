@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Scripts",
-    "path": "folders/Stages/Campgrounds/Scripts.yy",
+    "path": "folders/Stages/TemplateStages/Campgrounds/Scripts.yy",
   },
 }

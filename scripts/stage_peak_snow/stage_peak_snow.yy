@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Peak",
-    "path": "folders/Stages/Peak.yy",
+    "path": "folders/Stages/TemplateStages/Peak.yy",
   },
 }

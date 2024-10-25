@@ -142,6 +142,6 @@
   },
   "parent": {
     "name": "Haven",
-    "path": "folders/Stages/Haven.yy",
+    "path": "folders/Stages/TemplateStages/Haven.yy",
   },
 }

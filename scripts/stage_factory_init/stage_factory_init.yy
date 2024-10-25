@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Scripts",
-    "path": "folders/Stages/Factory/Scripts.yy",
+    "path": "folders/Stages/TemplateStages/Factory/Scripts.yy",
   },
 }

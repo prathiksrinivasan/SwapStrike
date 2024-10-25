@@ -18,6 +18,6 @@
   "duration": 236.82613,
   "parent": {
     "name": "Clouds",
-    "path": "folders/Stages/Clouds.yy",
+    "path": "folders/Stages/TemplateStages/Clouds.yy",
   },
 }

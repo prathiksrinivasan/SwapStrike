@@ -8,7 +8,7 @@ uniform vec4 palette_base[48];
 uniform vec4 palette_swap[48];
 uniform int count;
 
-const float tolerance = 0.05;
+const float tolerance = 0.1;
 
 void main()
 	{

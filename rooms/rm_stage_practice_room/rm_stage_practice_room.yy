@@ -174,6 +174,6 @@
   },
   "parent": {
     "name": "Practice Room",
-    "path": "folders/Stages/Practice Room.yy",
+    "path": "folders/Stages/TemplateStages/Practice Room.yy",
   },
 }

@@ -4,7 +4,7 @@ function start_debug_game(){
 	//Set to offline mode
 	engine().is_online = false;
 	ggmr_destroy_all();
-	
+	window_set_fullscreen(true);
 	mis_init();
 	mis_auto_connect_enable(true);
 	mis_device_connect(MIS_DEVICE_TYPE.keyboard, 0)
@@ -15,7 +15,7 @@ function start_debug_game(){
 	player_data_create
 	(
 		0,
-		0,
+		2,
 		_device,
 		mis_device_convert_to_game_device(mis_device_get(_device,MIS_DEVICE_PROPERTY.device_type)),
 		profile_create
@@ -49,7 +49,7 @@ function start_debug_game(){
 	);
 	
 	//Set Stage
-	setting().match_stage = rm_stage_clouds;
+	setting().match_stage = rm_stage_walkoff;
 	//Debug and Match Settings
 	setting().debug_mode_enable = true;
 	setting().show_hurtboxes = true;

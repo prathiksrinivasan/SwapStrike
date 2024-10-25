@@ -10,7 +10,7 @@ function character_data_get_all()
 			(
 			"TestCharacter",
 			character_test_init,
-			spr_blocky_palette,
+			spr_wizard_palette,
 			spr_blocky_css,
 			spr_blocky_css,
 			spr_blocky_portrait,

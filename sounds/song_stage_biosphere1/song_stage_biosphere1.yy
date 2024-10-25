@@ -18,6 +18,6 @@
   "duration": 407.37958,
   "parent": {
     "name": "Biosphere",
-    "path": "folders/Stages/Biosphere.yy",
+    "path": "folders/Stages/TemplateStages/Biosphere.yy",
   },
 }

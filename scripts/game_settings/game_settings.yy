@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "SwapStrike",
-    "path": "SwapStrike.yyp",
+    "name": "Stages",
+    "path": "folders/Stages.yy",
   },
 }
