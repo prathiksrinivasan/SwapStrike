@@ -49,7 +49,7 @@ function sora_sideb()
 					speed_set(lengthdir_x(_len, _dir), lengthdir_y(_len, _dir), false, false);
 					
 					//Hitbox
-					var _hitbox = hitbox_create_melee(0, -100, 3, 2, 4, 10, 0.9, 5, 90, 4, SHAPE.rotation, _phase, FLIPPER.sakurai);
+					var _hitbox = hitbox_create_melee(0, -100, 3, 2, 4, 10, 0.9, 5, 90, 20, SHAPE.rotation, _phase, FLIPPER.sakurai);
 					hitbox_sprite_angle_set(_hitbox, _dir, true);
 					_hitbox.hit_vfx_style = [HIT_VFX.slash_medium, HIT_VFX.electric_weak];
 					_hitbox.hit_sfx = snd_hit_weak1;
@@ -137,7 +137,7 @@ function sora_sideb()
 						speed_set(lengthdir_x(_len, _dir), lengthdir_y(_len, _dir), false, false);
 						
 						//Hitbox
-						var _hitbox = hitbox_create_melee(0, -100, 3, 2, 4, 10, 0.9, 5, 90, 4, SHAPE.rotation, _phase, FLIPPER.sakurai);
+						var _hitbox = hitbox_create_melee(0, -100, 3, 2, 4, 10, 0.9, 5, 90, 20, SHAPE.rotation, _phase, FLIPPER.sakurai);
 						hitbox_sprite_angle_set(_hitbox, _dir, true);
 						_hitbox.hit_vfx_style = [HIT_VFX.slash_medium, HIT_VFX.electric_weak];
 						_hitbox.hit_sfx = snd_hit_weak0;
