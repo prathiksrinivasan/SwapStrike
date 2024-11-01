@@ -243,7 +243,7 @@ function character_test_init()
 		my_attacks[$ "Uair"			] = -1;
 		my_attacks[$ "Dair"			] = -1;
 				 
-		my_attacks[$ "Nspec"		] = ryu_nspec_hadoken;
+		my_attacks[$ "Nspec"		] = nspec_teleport;
 		my_attacks[$ "Fspec"		] = -1;
 		my_attacks[$ "Uspec"		] = -1;
 		my_attacks[$ "Dspec"		] = dspec_teleport;

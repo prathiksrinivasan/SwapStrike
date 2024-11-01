@@ -920,6 +920,7 @@
     {"id":{"name":"mario_nspec_fireball","path":"scripts/mario_nspec_fireball/mario_nspec_fireball.yy",},"order":99,},
     {"id":{"name":"ryu_nspec_hadoken","path":"scripts/ryu_nspec_hadoken/ryu_nspec_hadoken.yy",},"order":100,},
     {"id":{"name":"ryu_nspec_hadoken_detect_script","path":"scripts/ryu_nspec_hadoken_detect_script/ryu_nspec_hadoken_detect_script.yy",},"order":101,},
+    {"id":{"name":"nspec_teleport","path":"scripts/nspec_teleport/nspec_teleport.yy",},"order":168,},
     {"id":{"name":"vert_nspec_homing_attack","path":"scripts/vert_nspec_homing_attack/vert_nspec_homing_attack.yy",},"order":5,},
     {"id":{"name":"vert_nspec_homing_attack_draw","path":"scripts/vert_nspec_homing_attack_draw/vert_nspec_homing_attack_draw.yy",},"order":6,},
     {"id":{"name":"basic_nspec_programmable","path":"scripts/basic_nspec_programmable/basic_nspec_programmable.yy",},"order":105,},
@@ -2414,6 +2415,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"TestCharacter","folderPath":"folders/Characters/TestCharacter.yy","order":7,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Scripts","folderPath":"folders/Characters/TestCharacter/Scripts.yy","order":1,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sprites","folderPath":"folders/Characters/TestCharacter/Sprites.yy","order":2,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Attacks","folderPath":"folders/Characters/TestCharacter/Sprites/Attacks.yy","order":12,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Vertex","folderPath":"folders/Characters/Vertex.yy","order":5,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Attacks","folderPath":"folders/Characters/Vertex/Attacks.yy","order":1,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Scripts","folderPath":"folders/Characters/Vertex/Attacks/Scripts.yy","order":0,},
@@ -2495,7 +2497,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Smiley Floats","folderPath":"folders/Stages/TemplateStages/Smiley Floats.yy","order":11,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Walkoff","folderPath":"folders/Stages/TemplateStages/Walkoff.yy","order":12,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Wavy","folderPath":"folders/Stages/TemplateStages/Wavy.yy","order":13,},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Attacks","folderPath":"folders/Characters/TestCharacter/Sprites/Attacks.yy","order":12,},
   ],
   "AudioGroups": [
     {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},

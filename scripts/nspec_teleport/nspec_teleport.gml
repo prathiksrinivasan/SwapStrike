@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function dspec_teleport(){
+function nspec_teleport(){
 	// teleport spell, ripped directly from mewtwo uspec + hitbox after teleport
 	var run = true;
 	var _phase = argument_count > 0 ? argument[0] : attack_phase;
@@ -40,6 +40,10 @@ function dspec_teleport(){
 				
 					//Invulnerability
 					invulnerability_set(INV.invincible, 10);
+					var _hitbox = hitbox_create_projectile(0, -100, 3, 3.5, 4, 7, 0.8, 0, 20, SHAPE.circle, 0, 0, FLIPPER.from_player_center_horizontal);
+					_hitbox.hit_vfx_style = HIT_VFX.slash_weak;
+					_hitbox.hit_sfx = snd_hit_weak1;
+				
 				
 					attack_frame = 10;
 					attack_phase++;
@@ -62,7 +66,7 @@ function dspec_teleport(){
 					var _teleport_length = 250;
 					var _move_x = lengthdir_x(_teleport_length, _teleport_dir);
 					var _move_y = lengthdir_y(_teleport_length, _teleport_dir);
-				
+					
 					move_x(_move_x);
 				
 					//Check ledge grab after every move vertically
@@ -78,9 +82,6 @@ function dspec_teleport(){
 					speed_set(0, 0, false, false);
 
 					// add hitbox
-					var _hitbox = hitbox_create_melee(50, -100, 1.5, 3.5, 4, 7, 0.8, 5, 0, 10, SHAPE.square, 0, FLIPPER.from_player_center_horizontal);
-					_hitbox.hit_vfx_style = HIT_VFX.slash_weak;
-					_hitbox.hit_sfx = snd_hit_weak1;
 					
 					//Aerial vs grounded ending
 					if (on_ground())
@@ -90,7 +91,7 @@ function dspec_teleport(){
 						}
 					else
 						{
-						landing_lag = 15;
+						landing_lag = 5;
 						attack_frame = 15;
 						attack_phase = 2;
 						
