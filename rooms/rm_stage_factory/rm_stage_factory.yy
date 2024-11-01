@@ -144,6 +144,6 @@
   },
   "parent": {
     "name": "Factory",
-    "path": "folders/Stages/Factory.yy",
+    "path": "folders/Stages/TemplateStages/Factory.yy",
   },
 }

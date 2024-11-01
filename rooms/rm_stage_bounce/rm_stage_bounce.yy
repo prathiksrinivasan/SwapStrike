@@ -134,6 +134,6 @@
   },
   "parent": {
     "name": "Bounce",
-    "path": "folders/Stages/Bounce.yy",
+    "path": "folders/Stages/TemplateStages/Bounce.yy",
   },
 }

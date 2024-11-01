@@ -18,6 +18,6 @@
   "duration": 301.74042,
   "parent": {
     "name": "Sounds",
-    "path": "folders/Stages/Campgrounds/Sounds.yy",
+    "path": "folders/Stages/TemplateStages/Campgrounds/Sounds.yy",
   },
 }

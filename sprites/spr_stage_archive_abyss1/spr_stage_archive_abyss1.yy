@@ -69,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Archive",
-    "path": "folders/Stages/Archive.yy",
+    "path": "folders/Stages/TemplateStages/Archive.yy",
   },
 }

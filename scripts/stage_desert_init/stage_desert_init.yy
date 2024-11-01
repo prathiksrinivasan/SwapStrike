@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Desert",
-    "path": "folders/Stages/Desert.yy",
+    "path": "folders/Stages/TemplateStages/Desert.yy",
   },
 }

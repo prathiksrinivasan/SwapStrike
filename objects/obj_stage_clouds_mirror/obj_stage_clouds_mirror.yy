@@ -30,6 +30,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Clouds",
-    "path": "folders/Stages/Clouds.yy",
+    "path": "folders/Stages/TemplateStages/Clouds.yy",
   },
 }

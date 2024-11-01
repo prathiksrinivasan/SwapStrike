@@ -17,11 +17,11 @@ function character_test_init()
 	if (_set_properties)
 		{
 		//Collision box
-		collision_box = spr_collision_mask_medium;
+		collision_box = spr_default_hurtbox;
 	
 		//Hurtbox
-		hurtbox_sprite = spr_blocky_hurtbox;
-		hurtbox_crouch_sprite = spr_basic_hurtbox_crouch;
+		hurtbox_sprite = spr_default_hurtbox;
+		hurtbox_crouch_sprite = spr_default_hurtbox;
 	
 		//Weight
 		weight_multiplier = 1;
@@ -269,73 +269,73 @@ function character_test_init()
 	//Animations / Sprites
 	if (_set_sprites)
 		{
-		sprite_scale = 2;
+		sprite_scale = 1;
 	
-		my_sprites[$ "Entrance"			] = anim_define(spr_blocky_entrance, anim_define(spr_blocky_idle));
-		my_sprites[$ "Idle"				] = spr_blocky_idle;
-		my_sprites[$ "Crouch"			] = anim_define(spr_basic_crouch_begin, anim_define(spr_basic_crouch));
-		my_sprites[$ "Walk"				] = spr_basic_walk;
-		my_sprites[$ "Walk_Turn"		] = spr_basic_walk;
-		my_sprites[$ "Dash"				] = spr_basic_run;
-		my_sprites[$ "Run"				] = spr_basic_run;
-		my_sprites[$ "Run_Turn"			] = spr_basic_run;
-		my_sprites[$ "Run_Stop"			] = spr_basic_run_stop;
+		my_sprites[$ "Entrance"			] = spr_placeholder;
+		my_sprites[$ "Idle"				] = anim_define_ext(spr_wiz_idle,0,.16);
+		my_sprites[$ "Crouch"			] = spr_wiz_crouch;
+		my_sprites[$ "Walk"				] = spr_placeholder;
+		my_sprites[$ "Walk_Turn"		] = spr_placeholder;
+		my_sprites[$ "Dash"				] = spr_wiz_dash;
+		my_sprites[$ "Run"				] = spr_wiz_run;
+		my_sprites[$ "Run_Turn"			] = spr_placeholder;
+		my_sprites[$ "Run_Stop"			] = spr_placeholder;
 				 
-		my_sprites[$ "Jumpsquat"		] = spr_basic_jumpsquat;
-		my_sprites[$ "Jump_Rise"		] = spr_basic_jump_rise;
-		my_sprites[$ "Jump_Mid"			] = spr_basic_jump_mid;
-		my_sprites[$ "Jump_Fall"		] = spr_basic_jump_fall;
-		my_sprites[$ "Fastfall"			] = spr_basic_fastfall;
-		my_sprites[$ "DJump_Rise"		] = anim_define(spr_basic_djump_rise, anim_define(spr_basic_jump_fall));
+		my_sprites[$ "Jumpsquat"		] = spr_wiz_crouch;
+		my_sprites[$ "Jump_Rise"		] = spr_wiz_jump;
+		my_sprites[$ "Jump_Mid"			] = spr_wiz_jump;
+		my_sprites[$ "Jump_Fall"		] = spr_wiz_fall;
+		my_sprites[$ "Fastfall"			] = spr_wiz_fall;
+		my_sprites[$ "DJump_Rise"		] = spr_wiz_jump;
 		my_sprites[$ "DJump_Mid"		] = -1;
-		my_sprites[$ "DJump_Fall"		] = -1;
+		my_sprites[$ "DJump_Fall"		] = spr_wiz_fall;
 		my_sprites[$ "DFastfall"		] = -1;
 				 
-		my_sprites[$ "Airdodge"			] = anim_define_ext(spr_basic_airdodge, 0, anim_calculate_speed(spr_basic_airdodge, airdodge_startup + airdodge_active + airdodge_endlag));
-		my_sprites[$ "Waveland"			] = spr_basic_waveland;
-		my_sprites[$ "Rolling"			] = spr_basic_rolling;
-		my_sprites[$ "Shield"			] = anim_define(spr_basic_shield_start, anim_define(spr_basic_shield));
-		my_sprites[$ "Shield_Release"	] = spr_basic_shield_release;
-		my_sprites[$ "Shield_Break"		] = anim_define_ext(spr_basic_shield_break, 0, 0.12, 1, 0, 1, 0, 0, true, -1);
-		my_sprites[$ "Parry_Stun"		] = spr_basic_parry_stun;
-		my_sprites[$ "Spot_Dodge"		] = spr_basic_spot_dodge;
+		my_sprites[$ "Airdodge"			] = spr_placeholder
+		my_sprites[$ "Waveland"			] = spr_placeholder;
+		my_sprites[$ "Rolling"			] = anim_define_ext(spr_wiz_roll,0,.5,1,0,1,0,0,0);
+		my_sprites[$ "Shield"			] = spr_placeholder
+		my_sprites[$ "Shield_Release"	] = spr_placeholder;
+		my_sprites[$ "Shield_Break"		] = spr_placeholder
+		my_sprites[$ "Parry_Stun"		] = spr_placeholder;
+		my_sprites[$ "Spot_Dodge"		] = spr_placeholder;
 				 
-		my_sprites[$ "Hitlag"			] = spr_basic_hitlag;
-		my_sprites[$ "Hitstun"			] = spr_basic_hitstun;
-		my_sprites[$ "Tumble"			] = spr_basic_tumble;
-		my_sprites[$ "Helpless"			] = spr_basic_helpless;
-		my_sprites[$ "Magnet"			] = spr_basic_hitlag;
-		my_sprites[$ "Flinch"			] = spr_basic_crouch;
-		my_sprites[$ "Landing_Lag"		] = spr_basic_crouch;
-		my_sprites[$ "Balloon"			] = spr_basic_balloon;
-		my_sprites[$ "Reeling"			] = spr_basic_reeling;
-		my_sprites[$ "Knockdown"		] = anim_define_ext(spr_basic_knockdown, 2, 0.7, 1, 0, 1, 0, 0, false, anim_define_ext(spr_basic_knockdown, 6, 0));
-		my_sprites[$ "Lock"				] = anim_define_ext(spr_basic_knockdown, 0, 0.5, 1, 0, 1, 0, 0, false, anim_define_ext(spr_basic_knockdown, 6, 0));
-		my_sprites[$ "Getup"			] = anim_define_ext(spr_basic_getup, 0, anim_calculate_speed(spr_basic_getup, getup_active + getup_endlag));
+		my_sprites[$ "Hitlag"			] = spr_placeholder;
+		my_sprites[$ "Hitstun"			] = spr_placeholder;
+		my_sprites[$ "Tumble"			] = spr_placeholder;
+		my_sprites[$ "Helpless"			] = spr_placeholder;
+		my_sprites[$ "Magnet"			] = spr_placeholder;
+		my_sprites[$ "Flinch"			] = spr_placeholder;
+		my_sprites[$ "Landing_Lag"		] = spr_placeholder;
+		my_sprites[$ "Balloon"			] = spr_placeholder;
+		my_sprites[$ "Reeling"			] = spr_placeholder;
+		my_sprites[$ "Knockdown"		] = spr_placeholder;
+		my_sprites[$ "Lock"				] = spr_placeholder;
+		my_sprites[$ "Getup"			] = spr_placeholder;
 	
-		my_sprites[$ "Tech_Rolling"		] = spr_basic_rolling; 
-		my_sprites[$ "Teching"			] = spr_basic_teching;
-		my_sprites[$ "Teching_Wall"		] = spr_basic_teching;
-		my_sprites[$ "Teching_Ceiling"	] = spr_basic_teching;
-		my_sprites[$ "Tech_Wall_Jump"	] = spr_basic_wall_jump;
+		my_sprites[$ "Tech_Rolling"		] = spr_placeholder; 
+		my_sprites[$ "Teching"			] = spr_placeholder;
+		my_sprites[$ "Teching_Wall"		] = spr_placeholder;
+		my_sprites[$ "Teching_Ceiling"	] = spr_placeholder;
+		my_sprites[$ "Tech_Wall_Jump"	] = spr_placeholder;
 				 
-		my_sprites[$ "Ledge_Snap"		] = spr_basic_ledge_snap;
-		my_sprites[$ "Ledge_Hang"		] = spr_basic_ledge_hang;
-		my_sprites[$ "Ledge_Getup"		] = spr_basic_ledge_getup;
-		my_sprites[$ "Ledge_Jump"		] = spr_basic_ledge_jump;
-		my_sprites[$ "Ledge_Roll"		] = spr_basic_ledge_jump;
-		my_sprites[$ "Ledge_Attack"		] = spr_basic_ledge_attack_getup;
-		my_sprites[$ "Ledge_Tether"		] = anim_define_ext(spr_basic_ledge_tether, 0, 0.3, 1, 0, 1, 0, 16, true, -1);
-		my_sprites[$ "Ledge_Trump"		] = spr_basic_ledge_trump;
-		my_sprites[$ "Wall_Cling"		] = -1;
-		my_sprites[$ "Wall_Jump"		] = spr_basic_wall_jump;
+		my_sprites[$ "Ledge_Snap"		] = spr_placeholder;
+		my_sprites[$ "Ledge_Hang"		] = spr_placeholder;
+		my_sprites[$ "Ledge_Getup"		] = spr_placeholder;
+		my_sprites[$ "Ledge_Jump"		] = spr_placeholder;
+		my_sprites[$ "Ledge_Roll"		] = spr_placeholder;
+		my_sprites[$ "Ledge_Attack"		] = spr_placeholder;
+		my_sprites[$ "Ledge_Tether"		] = spr_placeholder;
+		my_sprites[$ "Ledge_Trump"		] = spr_placeholder;
+		my_sprites[$ "Wall_Cling"		] = spr_placeholder;
+		my_sprites[$ "Wall_Jump"		] = spr_placeholder;
 	
-		my_sprites[$ "Star_KO"			] = spr_basic_star_ko;
-		my_sprites[$ "Screen_KO"		] = spr_basic_screen_ko;
+		my_sprites[$ "Star_KO"			] = spr_placeholder;
+		my_sprites[$ "Screen_KO"		] = spr_placeholder;
 				 
-		my_sprites[$ "Grabbing"			] = spr_basic_grabbing;
-		my_sprites[$ "Grabbed"			] = spr_basic_hitstun;
-		my_sprites[$ "Grab_Release"		] = spr_basic_crouch;
+		my_sprites[$ "Grabbing"			] = spr_placeholder;
+		my_sprites[$ "Grabbed"			] = spr_placeholder;
+		my_sprites[$ "Grab_Release"		] = spr_placeholder;
 		}
 	}
 /* Copyright 2024 Springroll Games / Yosi */

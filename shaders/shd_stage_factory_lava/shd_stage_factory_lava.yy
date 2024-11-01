@@ -5,6 +5,6 @@
   "type": 1,
   "parent": {
     "name": "Shaders",
-    "path": "folders/Stages/Factory/Shaders.yy",
+    "path": "folders/Stages/TemplateStages/Factory/Shaders.yy",
   },
 }

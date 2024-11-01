@@ -105,6 +105,6 @@
   },
   "parent": {
     "name": "Smiley Floats",
-    "path": "folders/Stages/Smiley Floats.yy",
+    "path": "folders/Stages/TemplateStages/Smiley Floats.yy",
   },
 }

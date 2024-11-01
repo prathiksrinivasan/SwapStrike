@@ -128,7 +128,7 @@ function setting()
 #macro max_players							8 //{int} The maximum number of players.
 #macro max_teams							4 //{int} The maximum number of teams.
 #macro airdodge_type						AIRDODGE_TYPE.momentum_stop //{int} The type of airdodge to use, from the enum AIRDODGE_TYPE.
-#macro shield_type							SHIELD_TYPE.parry_shield //{int} The type of shield to use, from the enum SHIELD_TYPE.
+#macro shield_type							SHIELD_TYPE.perfect_shield_start //{int} The type of shield to use, from the enum SHIELD_TYPE.
 #macro wall_jump_type						WALL_JUMP_TYPE.jump_press //{int} The type of wall jump to use, from the enum WALL_JUMP_TYPE.
 #macro ledge_type							LEDGE_TYPE.hog //{int} The type of ledge to use, from the enum LEDGE_TYPE.
 #macro hitstun_type							HITSTUN_TYPE.normal //{int} The hitstun formula to use, from the enum HITSTUN_TYPE.
@@ -137,13 +137,13 @@ function setting()
 #macro player_state_log_size				5 //{int} The number of states that are stored for the debug state log.
 //Visibility
 //Screen
-#macro screen_width							960 //{int} The width of the game window.
-#macro screen_height						540 //{int} The height of the game window.
+#macro screen_width							1920 //{int} The width of the game window.
+#macro screen_height						1080 //{int} The height of the game window.
 #macro screen_size_min						270 //{int} The minimum size of the game window.
 #macro screen_size_max						5000 //{int} The maximum size of the game window.
 //Camera
-#macro camera_width_start					960 //{real} The starting width of the game camera.
-#macro camera_height_start					540 //{real} The starting height of the game camera.
+#macro camera_width_start					1920 //{real} The starting width of the game camera.
+#macro camera_height_start					1080 //{real} The starting height of the game camera.
 #macro camera_boundary						120 //{real} The boundary around the edge of the blastzones that the camera can't go past.
 #macro camera_ratio							(camera_width_start / camera_height_start) //{real} DO NOT CHANGE. The ratio of the camera width and height.
 #macro camera_zoom_pad_scale				1.7 //{real} The padding around the camera when zooming, in percent.
@@ -165,9 +165,9 @@ function setting()
 #macro object_surface_size					400 //{int} The width and height of the surface objects with outlines draw to, in pixels.
 #macro object_surface_size_half				(object_surface_size / 2) //{int} Half the size of the object surface.
 //Outlines
-#macro player_outline						true //{bool} Whether players have outlines or not.
+#macro player_outline						false //{bool} Whether players have outlines or not.
 #macro projectile_outline					false //{bool} Whether projectiles have outlines or not.
-#macro entity_outline						true //{bool} Whether entities have outlines or not.
+#macro entity_outline						false //{bool} Whether entities have outlines or not.
 #macro item_outline							true //{bool} Whether items have outlines or not.
 //Player HUD
 #macro player_hud_type						HUD_TYPE.normal //{int} The type of HUD to use, from the HUD_TYPE enum.

@@ -73,6 +73,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Biosphere",
-    "path": "folders/Stages/Biosphere.yy",
+    "path": "folders/Stages/TemplateStages/Biosphere.yy",
   },
 }

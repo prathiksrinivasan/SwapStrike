@@ -18,6 +18,6 @@
   "duration": 96.0261,
   "parent": {
     "name": "Sounds",
-    "path": "folders/Stages/Haven/Sounds.yy",
+    "path": "folders/Stages/TemplateStages/Haven/Sounds.yy",
   },
 }
