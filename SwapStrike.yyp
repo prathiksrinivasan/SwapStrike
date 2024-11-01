@@ -1247,6 +1247,7 @@
     {"id":{"name":"bowser_jr_uair","path":"scripts/bowser_jr_uair/bowser_jr_uair.yy",},"order":112,},
     {"id":{"name":"spr_obj_game_negative","path":"sprites/spr_obj_game_negative/spr_obj_game_negative.yy",},"order":30,},
     {"id":{"name":"chrom_uair","path":"scripts/chrom_uair/chrom_uair.yy",},"order":113,},
+    {"id":{"name":"kapel","path":"scripts/kapel/kapel.yy",},"order":167,},
     {"id":{"name":"cloud_uair","path":"scripts/cloud_uair/cloud_uair.yy",},"order":114,},
     {"id":{"name":"dr_mario_uair","path":"scripts/dr_mario_uair/dr_mario_uair.yy",},"order":115,},
     {"id":{"name":"ike_uair","path":"scripts/ike_uair/ike_uair.yy",},"order":116,},
@@ -2413,6 +2414,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"TestCharacter","folderPath":"folders/Characters/TestCharacter.yy","order":7,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Scripts","folderPath":"folders/Characters/TestCharacter/Scripts.yy","order":1,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sprites","folderPath":"folders/Characters/TestCharacter/Sprites.yy","order":2,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Attacks","folderPath":"folders/Characters/TestCharacter/Sprites/Attacks.yy","order":12,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Vertex","folderPath":"folders/Characters/Vertex.yy","order":5,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Attacks","folderPath":"folders/Characters/Vertex/Attacks.yy","order":1,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Scripts","folderPath":"folders/Characters/Vertex/Attacks/Scripts.yy","order":0,},
@@ -2494,7 +2496,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Smiley Floats","folderPath":"folders/Stages/TemplateStages/Smiley Floats.yy","order":11,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Walkoff","folderPath":"folders/Stages/TemplateStages/Walkoff.yy","order":12,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Wavy","folderPath":"folders/Stages/TemplateStages/Wavy.yy","order":13,},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Attacks","folderPath":"folders/Characters/TestCharacter/Sprites/Attacks.yy","order":12,},
   ],
   "AudioGroups": [
     {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},
