@@ -229,11 +229,11 @@ function character_test_init()
 		{
 		my_attacks[$ "Jab"			] = chrom_jab;
 		my_attacks[$ "Dash_Attack"	] = -1;
-		my_attacks[$ "Ftilt"		] = -1;
-		my_attacks[$ "Utilt"		] = -1;
-		my_attacks[$ "Dtilt"		] = -1;
+		my_attacks[$ "Ftilt"		] = shulk_fair;
+		my_attacks[$ "Utilt"		] = ryu_nspec_hadoken;
+		my_attacks[$ "Dtilt"		] = ryu_nspec_hadoken_1;
 				 
-		my_attacks[$ "Fsmash"		] = -1;
+		my_attacks[$ "Fsmash"		] = terry_buster_wolf_1;
 		my_attacks[$ "Usmash"		] = -1;
 		my_attacks[$ "Dsmash"		] = -1;
 				 
@@ -241,12 +241,12 @@ function character_test_init()
 		my_attacks[$ "Fair"			] = -1;
 		my_attacks[$ "Bair"			] = -1;
 		my_attacks[$ "Uair"			] = -1;
-		my_attacks[$ "Dair"			] = -1;
+		my_attacks[$ "Dair"			] = shulk_dair;
 				 
-		my_attacks[$ "Nspec"		] = -1;
-		my_attacks[$ "Fspec"		] = -1;
+		my_attacks[$ "Nspec"		] = samus_fair_1;
+		my_attacks[$ "Fspec"		] = samus_fair;
 		my_attacks[$ "Uspec"		] = -1;
-		my_attacks[$ "Dspec"		] = -1;
+		my_attacks[$ "Dspec"		] = shulk_fair_1;
 				 
 		my_attacks[$ "Grab"			] = -1;
 		my_attacks[$ "Dash_Grab"	] = -1;

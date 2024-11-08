@@ -53,7 +53,7 @@ function start_debug_game(){
 	//Debug and Match Settings
 	setting().debug_mode_enable = true;
 	setting().show_hurtboxes = true;
-	setting().show_hitboxes = true;
+	setting().show_hitboxes = false;
 	setting().match_stock = 0;
 	setting().match_stamina = 999;
 	setting().match_time = 0;
