@@ -542,6 +542,7 @@
     {"id":{"name":"mario_fair","path":"scripts/mario_fair/mario_fair.yy",},"order":48,},
     {"id":{"name":"rm_touch_interface","path":"rooms/rm_touch_interface/rm_touch_interface.yy",},"order":5,},
     {"id":{"name":"mii_gunner_fair","path":"scripts/mii_gunner_fair/mii_gunner_fair.yy",},"order":49,},
+    {"id":{"name":"fspec_teleport","path":"scripts/fspec_teleport/fspec_teleport.yy",},"order":169,},
     {"id":{"name":"basic_nspec_sword_swing_draw","path":"scripts/basic_nspec_sword_swing_draw/basic_nspec_sword_swing_draw.yy",},"order":110,},
     {"id":{"name":"ridley_fair","path":"scripts/ridley_fair/ridley_fair.yy",},"order":50,},
     {"id":{"name":"samus_fair","path":"scripts/samus_fair/samus_fair.yy",},"order":51,},
