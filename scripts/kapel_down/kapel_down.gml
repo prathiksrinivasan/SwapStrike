@@ -1,10 +1,8 @@
-function kapel()
+function kapel_down()
 	{
-	//Neutral Special
+	//Down Version
 	/*
-	- Tap the button for a fast but weak fireball
-	- Hold the button for a strong but slow fireball
-	- Hold shield to not create a projectile
+	-Jumps straight up
 	*/
 	var run = true;
 	var _phase = argument_count > 0 ? argument[0] : attack_phase;
@@ -60,7 +58,7 @@ function kapel()
 					{
 					anim_frame = 4;
 					
-					speed_set(-8 * facing, -10, false, false);
+					speed_set(0, -10, false, false);
 						
 					
 					game_sound_play(snd_punch0);
@@ -70,14 +68,14 @@ function kapel()
 					_vfx.vfx_xscale = 2 * facing;
 					
 					//Melee hit
-					var _hitbox = hitbox_create_melee(32, 0, 0.6, 0.6, 4, 11, 0, 8, 0, 2, SHAPE.square, 0);
+					var _hitbox = hitbox_create_melee(32, 0, 0.6, 0.6, 4, 0, 0, 8, 0, 2, SHAPE.square, 0);
 					_hitbox.hit_vfx_style = HIT_VFX.normal_medium;
 					_hitbox.techable = false;
 					_hitbox.di_angle = 0;
 					_hitbox.custom_hitstun = 15;
 					_hitbox.hit_restriction = HIT_RESTRICTION.grounded_only;
 					_hitbox.can_lock = true;
-					var _hitbox = hitbox_create_melee(32, 0, 0.6, 0.6, 4, 6, 0.5, 8, 50, 2, SHAPE.square, 0);
+					var _hitbox = hitbox_create_melee(32, 0, 0.6, 0.6, 4, 0, 0.5, 8, 50, 2, SHAPE.square, 0);
 					_hitbox.hit_vfx_style = HIT_VFX.normal_medium;
 					_hitbox.hit_restriction = HIT_RESTRICTION.aerial_only;
 					
@@ -102,13 +100,14 @@ function kapel()
 				//Projectile
 				if (attack_frame == 32)
 					{
-					var _proj = hitbox_create_projectile_custom(obj_link_nspec_bow_arrow, 24, -5, 0.2, 0.2, 5, 2, 0.4, 45, 180, SHAPE.circle, 0, 0, FLIPPER.sakurai);
+					var _proj = hitbox_create_projectile_custom(obj_link_nspec_bow_arrow, 24, -8, 2, 2, 5, 10, 0.4, 65, 180, SHAPE.circle, 0, 0);
 					_proj.destroy_on_blocks = true;
 					_proj.destroy_on_hit = true;
 					_proj.grav = 0;
-					_proj.base_hitlag = 5;
+					_proj.base_hitlag = 25;
+					_proj.custom_hitstun = 60;
 					_proj.hit_sfx =  snd_hit_strong1;
-					_proj.hit_vfx_style =[HIT_VFX.explosion, HIT_VFX.slash_medium];
+					_proj.hit_vfx_style =[HIT_VFX.explosion, HIT_VFX.slash_medium, HIT_VFX.electric];
 					_proj.knockback_state =PLAYER_STATE.balloon;
 					_proj.can_lock = false;
 					
