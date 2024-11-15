@@ -230,8 +230,8 @@ function character_test_init()
 		my_attacks[$ "Jab"			] = chrom_jab;
 		my_attacks[$ "Dash_Attack"	] = -1;
 		my_attacks[$ "Ftilt"		] = shulk_fair;
-		my_attacks[$ "Utilt"		] = ryu_nspec_hadoken;
-		my_attacks[$ "Dtilt"		] = ryu_nspec_hadoken_1;
+		my_attacks[$ "Utilt"		] = ryu_nspec_hadoken_1;
+		my_attacks[$ "Dtilt"		] = ryu_nspec_hadoken;
 				 
 		my_attacks[$ "Fsmash"		] = terry_buster_wolf_1;
 		my_attacks[$ "Usmash"		] = -1;
