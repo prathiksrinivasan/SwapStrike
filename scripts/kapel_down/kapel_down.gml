@@ -59,6 +59,7 @@ function kapel_down()
 					anim_frame = 4;
 					
 					speed_set(0, -10, false, false);
+					speed_set(0, -15, false, false);
 						
 					
 					game_sound_play(snd_punch0);
