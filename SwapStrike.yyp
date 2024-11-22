@@ -2049,6 +2049,7 @@
     {"id":{"name":"spr_percent_symbol","path":"sprites/spr_percent_symbol/spr_percent_symbol.yy",},"order":17,},
     {"id":{"name":"spr_ping","path":"sprites/spr_ping/spr_ping.yy",},"order":20,},
     {"id":{"name":"spr_pixel","path":"sprites/spr_pixel/spr_pixel.yy",},"order":3,},
+    {"id":{"name":"long_punch_fspec","path":"scripts/long_punch_fspec/long_punch_fspec.yy",},"order":167,},
     {"id":{"name":"buffer_read_list","path":"scripts/buffer_read_list/buffer_read_list.yy",},"order":3,},
     {"id":{"name":"ggmr_net_ping_average","path":"scripts/ggmr_net_ping_average/ggmr_net_ping_average.yy",},"order":11,},
     {"id":{"name":"snd_hit_medium","path":"sounds/snd_hit_medium/snd_hit_medium.yy",},"order":19,},
