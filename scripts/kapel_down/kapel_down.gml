@@ -58,12 +58,8 @@ function kapel_down()
 					{
 					anim_frame = 4;
 					
-<<<<<<< Updated upstream
-					speed_set(0, -10, false, false);
-=======
 					speed_set(0, -15, false, false);
->>>>>>> Stashed changes
-						
+
 					
 					game_sound_play(snd_punch0);
 					
