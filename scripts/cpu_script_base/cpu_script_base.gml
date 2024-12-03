@@ -43,7 +43,7 @@ function cpu_script_base()
 				_lx = 0;
 				_ly = 0;
 				//Attempt to tech immediately
-				cpu_press(INPUT.shield);
+				//cpu_press(INPUT.shield);
 				}
 			else if (state == PLAYER_STATE.hitstun || state == PLAYER_STATE.balloon)
 				{

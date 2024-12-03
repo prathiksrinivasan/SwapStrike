@@ -247,9 +247,9 @@ function setting()
 #macro finishing_blow_hitlag_increase		40 //{int} The number of extra frames of hitlag a finishing blow causes.
 #macro reeling_speed_threshold				12 //{int} The speed a player must be launched at for them to count as "reeling".
 #macro balloon_speed_threshold				12 //{int} The speed a player must be launched at for balloon knockback to take effect.
-#macro balloon_lower_frame					4 //{int} The number of frames at the start of hitstun in the balloon state that balloon knockback will take effect, regardless of speed.
-#macro balloon_upper_frame					4 //{int} The number of frames at the end of hitstun in the balloon state that balloon knockback will NOT take effect, regardless of speed.
-#macro balloon_end_speed_multiplier			0.75 //{int} The number the player's speed is multiplied by when the balloon state ends.
+#macro balloon_lower_frame					6 //{int} The number of frames at the start of hitstun in the balloon state that balloon knockback will take effect, regardless of speed.
+#macro balloon_upper_frame					6 //{int} The number of frames at the end of hitstun in the balloon state that balloon knockback will NOT take effect, regardless of speed.
+#macro balloon_end_speed_multiplier			0.9 //{int} The number the player's speed is multiplied by when the balloon state ends.
 #macro crouch_cancel_armor					7.5 //{real} The maximum knockback that can be completely ignored by crouch canceling.
 #macro autolink_speed_multiplier			3 //{real} The number the attacking player's speed is multiplied by when calculating the angle autolink hitboxes send at. A higher number will allow autolinks to be more consistent when players are moving quickly.
 #macro magnetbox_snap_speed_default			10 //{real} The speed at which players are moved toward the magnet position after being hit by a magnetbox.
@@ -327,7 +327,7 @@ function setting()
 #macro platform_snap_down_threshold			8 //{int} The number of pixels above a platform a player can be to still waveland on top of it.
 #macro platform_drop_speed					1 //{real} The vertical speed players are given when dropping through a platform.
 #macro solid_snap_threshold					12 //{int} The amount of pixels below a solid block a player can be to still waveland on top of it.
-#macro bounce_minimum_speed					12 //{real} The speed players must have during hitstun to bounce off blocks and platforms.
+#macro bounce_minimum_speed					2 //{real} The speed players must have during hitstun to bounce off blocks and platforms.
 #macro bounce_speed_multiplier				0.6 //{real} The speed multiplier used when players bounce.
 #macro bounce_screen_shake_multiplier		0.3 //{real} The multiplier applied to the player's speed to determine how much the camera shakes when the player hits a wall without teching.
 #macro slope_change_speed					true //{bool} Whether players will change speed when moving on slopes.

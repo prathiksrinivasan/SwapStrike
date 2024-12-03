@@ -227,21 +227,21 @@ function character_test_init()
 	// do NOT include the parentheses when writing the script name
 	if (_set_attacks)
 		{
-		my_attacks[$ "Jab"			] = chrom_jab;
+		my_attacks[$ "Jab"			] = -1;
 		my_attacks[$ "Dash_Attack"	] = -1;
 		my_attacks[$ "Ftilt"		] = -1;
 		my_attacks[$ "Utilt"		] = -1;
-		my_attacks[$ "Dtilt"		] = -1;
+		my_attacks[$ "Dtilt"		] = atk_base_dtilt;
 				 
 		my_attacks[$ "Fsmash"		] = -1;
 		my_attacks[$ "Usmash"		] = -1;
 		my_attacks[$ "Dsmash"		] = -1;
 				 
-		my_attacks[$ "Nair"			] = -1;
-		my_attacks[$ "Fair"			] = -1;
-		my_attacks[$ "Bair"			] = -1;
+		my_attacks[$ "Nair"			] = atk_base_nair;
+		my_attacks[$ "Fair"			] = atk_base_fair;
+		my_attacks[$ "Bair"			] = atk_base_bair;
 		my_attacks[$ "Uair"			] = -1;
-		my_attacks[$ "Dair"			] = -1;
+		my_attacks[$ "Dair"			] = atk_base_dair;
 				 
 		my_attacks[$ "Nspec"		] = -1;
 		my_attacks[$ "Fspec"		] = -1;
@@ -269,7 +269,7 @@ function character_test_init()
 	//Animations / Sprites
 	if (_set_sprites)
 		{
-		sprite_scale = 1;
+		sprite_scale = 1.5;
 	
 		my_sprites[$ "Entrance"			] = spr_placeholder;
 		my_sprites[$ "Idle"				] = anim_define_ext(spr_wiz_idle,0,.16);
