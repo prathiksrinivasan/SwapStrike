@@ -1,10 +1,7 @@
-function departure()
+function departure_down()
 	{
-	//Down Special
-	/*
-	- Attaches to players or blocks
-	- If there is already a C4 active, using the move explodes it
-	*/
+	//Down version of Departure. Spawns under player
+	
 	var run = true;
 	var _phase = argument_count > 0 ? argument[0] : attack_phase;
 
@@ -32,9 +29,9 @@ function departure()
 				anim_frame = 0;
 				anim_speed = 0;
 			
-				//Check if the C4 exists already or not
+				//Check if the spike exists already or not
 				var _exists = false;
-				with (obj_departure_neutral_spike)
+				with (obj_departure_down_spike)
 					{
 					if (owner == other.id)
 						{
@@ -69,7 +66,7 @@ function departure()
 					attack_phase++;
 					attack_frame = 15;
 					show_debug_message("here")
-					entity_create(x + 256 * facing, y - 256, obj_departure_neutral_spike, "Player_Front");
+					entity_create(x, y, obj_departure_down_spike, "Player_Front");
 					
 					}
 				break;
@@ -102,7 +99,7 @@ function departure()
 				if (attack_frame == 15)
 					{
 					//Explode all the C4s you own
-					with (obj_departure_neutral_spike)
+					with (obj_departure_down_spike)
 						{
 						var _s = custom_entity_struct;
 						
@@ -111,28 +108,30 @@ function departure()
 							{
 							_s.explosion_time = 10;
 						
-							//All along the spike
-							var _hitbox = hitbox_create_melee(0, -10, 1, 10, 11, 7, 0.6, 11, 90, 10, SHAPE.circle, 0);
+							//Sweetspot
+							var _hitbox = hitbox_create_melee(0, 0, 2, 2, 11, 7, 0.6, 11, 60, 10, SHAPE.circle, 0);
 							_hitbox.hit_sfx = snd_hit_explosion3;
 							_hitbox.hit_vfx_style = HIT_VFX.explosion;
-							var _hitbox = hitbox_create_melee(0, 0, 1, 5, 11, 7, 0.6, 11, 90, 10, SHAPE.circle, 0);
+							var _hitbox = hitbox_create_melee(0, -64, 1.5, 1.8, 11, 7, 0.6, 11, 60, 10, SHAPE.circle, 0);
 							_hitbox.hit_sfx = snd_hit_explosion3;
 							_hitbox.hit_vfx_style = HIT_VFX.explosion;
-							var _hitbox = hitbox_create_melee(0, 10, 1, 4, 11, 7, 0.6, 11, 90, 10, SHAPE.circle, 0);
+							var _hitbox = hitbox_create_melee(0, -128, 1.25, 1.5, 11, 7, 0.6, 11, 60, 10, SHAPE.circle, 0);
 							_hitbox.hit_sfx = snd_hit_explosion3;
-							_hitbox.hit_vfx_style = HIT_VFX.explosion;
-						
+							_hitbox.hit_vfx_style = HIT_VFX.explosion;	
+							var _hitbox = hitbox_create_melee(0, -164, 1, 1.25, 11, 7, 0.6, 11, 60, 10, SHAPE.circle, 0);
+							_hitbox.hit_sfx = snd_hit_explosion3;
+							_hitbox.hit_vfx_style = HIT_VFX.explosion;	
 							//Weak hitbox
-							var _hitbox = hitbox_create_melee(0, -10, 2.5, 25, 5, 6, 0.5, 7, 90, 5, SHAPE.circle, 0);
-							_hitbox.hit_sfx = snd_hit_explosion3;
-							_hitbox.hit_vfx_style = HIT_VFX.normal_strong;
-								
+							//var _hitbox = hitbox_create_melee(0, 0, 2.5, 2.5, 3, 6, 0.5, 3, 90, 5, SHAPE.circle, 0);
+							//_hitbox.hit_sfx = snd_hit_explosion3;
+							//_hitbox.hit_vfx_style = HIT_VFX.normal_strong;
+							//_hitbox.custom_hitstun = 20;
 						
 							//Explosion VFX
 							var _vfx = vfx_create(spr_snake_dspec_c4_explosion, 1, 0, 34, x, y, 2, 0);
 							_vfx.important = true;
 							game_sound_play(snd_hit_explosion1);
-							camera_shake(5);
+							camera_shake(3);
 							}
 						}
 					attack_cooldown_set(12);

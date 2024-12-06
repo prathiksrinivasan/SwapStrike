@@ -243,10 +243,10 @@ function character_test_init()
 		my_attacks[$ "Uair"			] = -1;
 		my_attacks[$ "Dair"			] = -1;
 				 
-		my_attacks[$ "Nspec"		] = departure;
-		my_attacks[$ "Fspec"		] = -1;
-		my_attacks[$ "Uspec"		] = -1;
-		my_attacks[$ "Dspec"		] = -1;
+		my_attacks[$ "Nspec"		] = departure_neutral;
+		my_attacks[$ "Fspec"		] = departure_forward;
+		my_attacks[$ "Uspec"		] = snake_dspec_c4;
+		my_attacks[$ "Dspec"		] = departure_down;
 				 
 		my_attacks[$ "Grab"			] = -1;
 		my_attacks[$ "Dash_Grab"	] = -1;

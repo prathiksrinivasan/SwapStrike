@@ -1,8 +1,8 @@
 ///@description Called by obj_game
+//Down Spike activation
 
 var _s = custom_entity_struct;
-show_debug_message("Uhhhhh")
-show_debug_message(_s.explosion_time)
+
 if (_s.explosion_time > 0)
 	{
 	_s.explosion_time--;
@@ -31,13 +31,13 @@ else
 		var _hitbox = hitbox_create_melee(0, 0, 2, 2, 11, 7, 0.6, 11, 60, 10, SHAPE.circle, 0);
 		_hitbox.hit_sfx = snd_hit_explosion3;
 		_hitbox.hit_vfx_style = HIT_VFX.explosion;
-		var _hitbox = hitbox_create_melee(0, 64, 1.5, 1.8, 11, 7, 0.6, 11, 60, 10, SHAPE.circle, 0);
+		var _hitbox = hitbox_create_melee(0, -64, 1.5, 1.8, 11, 7, 0.6, 11, 60, 10, SHAPE.circle, 0);
 		_hitbox.hit_sfx = snd_hit_explosion3;
 		_hitbox.hit_vfx_style = HIT_VFX.explosion;
-		var _hitbox = hitbox_create_melee(0, 128, 1.25, 1.5, 11, 7, 0.6, 11, 60, 10, SHAPE.circle, 0);
+		var _hitbox = hitbox_create_melee(0, -128, 1.25, 1.5, 11, 7, 0.6, 11, 60, 10, SHAPE.circle, 0);
 		_hitbox.hit_sfx = snd_hit_explosion3;
 		_hitbox.hit_vfx_style = HIT_VFX.explosion;	
-		var _hitbox = hitbox_create_melee(0, 164, 1, 1.25, 11, 7, 0.6, 11, 60, 10, SHAPE.circle, 0);
+		var _hitbox = hitbox_create_melee(0, -164, 1, 1.25, 11, 7, 0.6, 11, 60, 10, SHAPE.circle, 0);
 		_hitbox.hit_sfx = snd_hit_explosion3;
 		_hitbox.hit_vfx_style = HIT_VFX.explosion;	
 		//Weak hitbox

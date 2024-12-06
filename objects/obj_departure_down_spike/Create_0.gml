@@ -13,6 +13,7 @@ _s.max_fall_speed = 9;
 _s.grounded = false;
 _s.explosion_time = -1;
 _s.auto_explode_timer = 240;
+show_debug_message(_s.auto_explode_timer)
 
 image_speed = 0
 image_xscale = 2;
