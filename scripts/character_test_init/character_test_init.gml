@@ -27,27 +27,27 @@ function character_test_init()
 		weight_multiplier = 1;
 	
 		//Gravity
-		grav = 0.5;
+		grav = 0.7;
 		hitstun_grav = 0.5;
 	
 		//Falling
-		max_fall_speed = 10;
-		fastfall_speed = 14;
+		max_fall_speed = 13;
+		fastfall_speed = 16;
 	
 		//Jumping
 		jumpsquat_time = 3;
-		jump_speed = 11.5;
-		jump_horizontal_accel = 3;
-		shorthop_speed = 6.5;
-		double_jump_speed = 10.5;
-		double_jump_horizontal_accel = 2;
+		jump_speed = 17;
+		jump_horizontal_accel = 8;
+		shorthop_speed = 13;
+		double_jump_speed = 15;
+		double_jump_horizontal_accel = 8;
 		max_double_jumps = 1;
 		land_time = 4;
 	
 		//Aerial Movment
-		air_accel = 0.35;
-		max_air_speed = 5.25;
-		max_air_speed_dash = 6.75;
+		air_accel = .75;
+		max_air_speed = 11;
+		max_air_speed_dash = 8;
 		air_friction = 0.04;
 	
 		//Ground Movement
@@ -63,14 +63,14 @@ function character_test_init()
 		walk_turn_time = 6;
 	
 		//Dashing
-		dash_speed = 8;
+		dash_speed = 16;
 		dash_time = 9;
-		dash_accel = 8;
+		dash_accel = 12;
 	
 		//Running
-		run_speed = 7;
+		run_speed = 12;
 		run_accel = 0.8;
-		run_turn_time = 5;
+		run_turn_time = 3;
 		run_turn_accel = 1;
 		run_stop_time = 4;
 	
@@ -209,7 +209,6 @@ function character_test_init()
 		
 		//Custom Scripts
 		draw_script = -1;
-		callback_add(callback_passive, bayonetta_fspec_afterburner_passive, CALLBACK_TYPE.permanent);
 		}
 
 	//States
@@ -227,9 +226,9 @@ function character_test_init()
 	// do NOT include the parentheses when writing the script name
 	if (_set_attacks)
 		{
-		my_attacks[$ "Jab"			] = -1;
-		my_attacks[$ "Dash_Attack"	] = -1;
-		my_attacks[$ "Ftilt"		] = -1;
+		my_attacks[$ "Jab"			] = atk_base_jab;
+		my_attacks[$ "Dash_Attack"	] = atk_base_ftilt;
+		my_attacks[$ "Ftilt"		] = atk_base_ftilt;
 		my_attacks[$ "Utilt"		] = -1;
 		my_attacks[$ "Dtilt"		] = atk_base_dtilt;
 				 

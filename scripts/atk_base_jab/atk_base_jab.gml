@@ -1,27 +1,19 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function atk_base_jab(){
-//Forward Aerial
+function atk_base_jab()
+{
+	//Jab for Scalar
+	/*
+	- Press the button multiple times to continue the combo
+	- The first two hits can be canceled into tilts
+	*/
 	var run = true;
 	var _phase = argument_count > 0 ? argument[0] : attack_phase;
-	
 	//Timer
 	attack_frame = max(--attack_frame, 0);
-	friction_gravity(air_friction, grav, max_fall_speed);
-	fastfall_attack_try();
-	allow_hitfall();
-	aerial_drift();
-	
+	friction_gravity(ground_friction, grav, max_fall_speed);
 	//Canceling
-	if (run && cancel_ground_check())
-		{
-		run = false;
-		}
-	
-	//Properties
-	var _tipper_damage = 13;
-	var _normal_damage = 6;
-	
+	if (run && cancel_air_check()) then run = false;
 	//Phases
 	if (run)
 		{
@@ -30,135 +22,195 @@ function atk_base_jab(){
 			case PHASE.start:
 				{
 				//Animation
-				anim_sprite = spr_air_forward;
+				anim_sprite = spr_ground_jab;
 				anim_speed = 0;
 				anim_frame = 0;
 		
-				attack_frame = 10;
-				landing_lag = 14;
-				speed_set(0, -1, true, true);
-				
+				attack_frame = 4;
 				return;
 				}
-			//Startup
+			//First Jab Startup
 			case 0:
 				{
 				//Animation
-				if (attack_frame == 6)
-					anim_frame = 1;
 				if (attack_frame == 2)
-					anim_frame = 2;
+					anim_frame = 1;
 					
 				if (attack_frame == 0)
 					{
-					anim_frame = 3;
+					anim_frame = 2;
 			
 					attack_phase++;
 					attack_frame = 8;
-					
-					game_sound_play(snd_swing3);
-					
-					//Tipper
-					var _hitbox = hitbox_create_melee(28, -52, 0.45, 0.45, _tipper_damage, 5, 1.1, 12, 40, 1, SHAPE.circle, 0);
-					_hitbox.hit_vfx_style = HIT_VFX.slash_strong;
-					_hitbox.hit_sfx = snd_hit_strong0;
-					_hitbox.knockback_state = PLAYER_STATE.balloon;
+					var _hitbox = hitbox_create_melee(104, -179, 2.25, 2.9, 3, 6, 1, 3, 170, 4, SHAPE.square, 0);
 					}
 				break;
 				}
-			//Active
+			//First Jab Active
 			case 1:
 				{
-				if (attack_frame == 7)
+				//Animation
+				if (attack_frame == 4)
+					anim_frame = 3;
+					
+				//Cancel into tilts from first jab
+				if (attack_connected() && stick_tilted(Lstick) && allow_ground_attacks())
+					{
+					run = false;
+					break;
+					}
+					
+				if (attack_frame == 0)
+					{
+					attack_phase++;
+					attack_frame = 12;
+					}
+				break;
+				}
+			//First Jab Endlag
+			case 2:
+				{
+			
+				//Cancel into tilts from first jab
+				if (stick_tilted(Lstick) && allow_ground_attacks())
+					{
+					run = false;
+					break;
+					}
+					
+				//Continue to next jab
+				if (input_pressed(INPUT.attack, 12)) || (attack_connected() && input_held(INPUT.attack))
 					{
 					anim_frame = 4;
-					
-					//Inside
-					var _hitbox = hitbox_create_melee(46, -18, 0.7, 1.0, _normal_damage, 8, 0.8, 5, 45, 1, SHAPE.circle, 0, FLIPPER.sakurai);
-					_hitbox.hit_vfx_style = HIT_VFX.slash_medium;
-					_hitbox.hit_sfx = snd_hit_weak0;
-					_hitbox.can_lock = true;
-					
-					//Tippers
-					var _hitbox = hitbox_create_melee(70, -10, 0.5, 0.7, _tipper_damage, 5, 1.1, 12, 40, 1, SHAPE.circle, 0);
-					_hitbox.hit_vfx_style = HIT_VFX.slash_strong;
-					_hitbox.hit_sfx = snd_hit_strong0;
-					_hitbox.knockback_state = PLAYER_STATE.balloon;
-					var _hitbox = hitbox_create_melee(54, -32, 0.6, 0.7, _tipper_damage, 5, 1.1, 12, 40, 1, SHAPE.circle, 0);
-					_hitbox.hit_vfx_style = HIT_VFX.slash_strong;
-					_hitbox.hit_sfx = snd_hit_strong0;
-					_hitbox.knockback_state = PLAYER_STATE.balloon;
+					attack_phase++;
+					attack_frame = 6;
 					}
-					
-				if (attack_frame == 6)
+				//Auto end
+				else if (attack_frame == 0)
 					{
+					attack_stop(PLAYER_STATE.idle);
+					run = false;
+					}
+				break;
+				}
+			//Second Jab Startup
+			case 3:
+				{
+				//Animation
+				if (attack_frame == 3)
 					anim_frame = 5;
 					
-					//Inside
-					var _hitbox = hitbox_create_melee(54, 0, 0.6, 1.2, _normal_damage, 8, 0.8, 5, 45, 1, SHAPE.circle, 0, FLIPPER.sakurai);
-					_hitbox.hit_vfx_style = HIT_VFX.slash_medium;
-					_hitbox.hit_sfx = snd_hit_weak0;
-					_hitbox.can_lock = true;
-					
-					//Tipper
-					var _hitbox = hitbox_create_melee(65, 0, 0.7, 1.4, _tipper_damage, 5, 1.1, 12, 40, 1, SHAPE.circle, 0);
-					_hitbox.hit_vfx_style = HIT_VFX.slash_strong;
-					_hitbox.hit_sfx = snd_hit_strong0;
-					_hitbox.knockback_state = PLAYER_STATE.balloon;
-					}
-					
-				if (attack_frame == 5)
+				if (attack_frame == 0)
 					{
 					anim_frame = 6;
-					
-					//Inside
-					var _hitbox = hitbox_create_melee(27, 39, 1.1, 0.8, _normal_damage, 8, 0.8, 5, 45, 2, SHAPE.circle, 0, FLIPPER.from_player_center_horizontal);
-					_hitbox.hit_vfx_style = HIT_VFX.slash_medium;
-					_hitbox.hit_sfx = snd_hit_weak0;
-					_hitbox.can_lock = true;
+					attack_phase++;
+					attack_frame = 10;
+					var _hitbox = hitbox_create_melee(101, -109, 1.87, 4, 6, 12, 1, 5, 80, 4, SHAPE.square, 1);
 					}
-				
+				break;
+				}
+			//Second Jab Active
+			case 4:
+				{
 				//Animation
 				if (attack_frame == 3)
 					anim_frame = 7;
 					
-				//Reduce landing lag on hit
-				if (attack_connected())
+				//Cancel into tilts from second jab
+				if (attack_connected() && stick_tilted(Lstick) && allow_ground_attacks())
 					{
-					landing_lag = 8;
+					run = false;
+					break;
 					}
-					
+				
+			
 				if (attack_frame == 0)
 					{
-					anim_frame = 8;
 					attack_phase++;
-					attack_frame = attack_connected() ? 15 : 25;
+					attack_frame = 20;
 					}
 				break;
 				}
-			//Endlag
-			case 2:
+			//Second Jab Endlag
+			case 5:
 				{
 				//Animation
-				if (attack_frame <= 20)
-					anim_frame = 9;
-				if (attack_frame <= 10)
-					anim_frame = 10;
-				
-				//Autocancel
-				if (attack_frame < 15)
-					landing_lag = 4;
+				if (attack_frame == 15)
+					anim_frame = 5;
+				if (attack_frame == 10)
+					anim_frame = 4;
 					
+				//Cancel into tilts from first jab
+				if (stick_tilted(Lstick) && allow_ground_attacks())
+					{
+					run = false;
+					break;
+					}
+					
+				if (input_pressed(INPUT.jump, 12))
+					{
+					run = false;
+					break;
+					}
+					
+				//Continue to next jab
+				if (input_pressed(INPUT.attack, 12)) || (attack_connected() && input_held(INPUT.attack))
+					{
+					anim_frame = 8;
+					attack_phase++;
+					attack_frame = 12;
+					}
+			
 				if (attack_frame == 0)
 					{
-					attack_stop(PLAYER_STATE.aerial);
+					attack_stop(PLAYER_STATE.idle);
+					run = false;
+					}
+				break;
+				}
+				//third jab startup
+			case 6:
+				{
+				if(attack_frame == 8)
+					anim_frame = 9;
+					
+				if(attack_frame == 0)
+				{
+					anim_frame = 10;
+					hitbox_create_melee(240,-180,3,3,14,16,1,10,25,4,SHAPE.circle,2)
+					attack_phase++;
+					attack_frame = 4;
+					
+				}
+				break;
+				}
+				//third jab active
+			case 7:
+				{
+				if(attack_frame == 0)
+				{
+					attack_phase++;
+					anim_frame = 11;
+					attack_frame = 30;
+				}
+				break;
+				}
+				//third jab endlag
+			case 8:
+				{
+				if(attack_frame == 22)
+					anim_frame = 12;
+				if (attack_frame == 0)
+					{
+					attack_stop(PLAYER_STATE.idle);
 					run = false;
 					}
 				break;
 				}
 			}
+			
 		}
-		
 	//Movement
-	move();
-}
+	move_grounded();
+
+	}

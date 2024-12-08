@@ -195,7 +195,7 @@ function setting()
 //Control Stick
 #macro stick_check_type						STICK_CHECK_TYPE.backwards //{int} The stick check type to use, from the enum STICK_CHECK_TYPE.
 #macro stick_check_frames					3 //{int} The number of frames to use to determine the speed of the control stick.
-#macro stick_tilt_amount					0.4 //{real} The "tilt" threshold of the left stick.
+#macro stick_tilt_amount					0 //{real} The "tilt" threshold of the left stick.
 #macro stick_flick_speed					0.50 //{real} The speed the left stick needs to be moved at to count as a flick.
 #macro stick_flick_amount					0.75 //{real} The "flick" threshold of the left stick.
 #macro stick_flick_buff						6 //{int} The number of frames a flick will be saved.
@@ -281,7 +281,7 @@ function setting()
 //Jumping
 #macro jumpsquat_allow_turnaround			false //{bool} Whether players can turn around at the end of jumpsquat or not.
 #macro jumpsquat_change_momentum			true //{bool} Whether players can reverse their momentum at the end of jumpsquat or not.
-#macro footstools_enable					true //{bool} Whether players can footstool other players by pressing jump when above them or not.
+#macro footstools_enable					false //{bool} Whether players can footstool other players by pressing jump when above them or not.
 //Landing
 #macro attack_landing_lag_default			5 //{int} The default landing lag of attacks.
 #macro landing_buffer_jumpsquat				true //{bool} Whether players can start jumpsquat before landing lag finishes or not.
@@ -348,7 +348,7 @@ function setting()
 #macro shield_hitlag_multiplier				0.75 //{real} This number is multiplied with the base hitlag of an attack to determine how much hitlag players experience for shielding the attack.
 #macro shield_hit_sound						snd_hit_weak1 //{asset} The sound played when an attack is shielded.
 #macro shield_size_min						0.3 //{real} The minimum shield size.
-#macro shield_size_multiplier_default		0.8 //{real} The default shield size multiplier for characters. Please note: If shield poking is disabled, the shield size is purely visual and has no impact on gameplay.
+#macro shield_size_multiplier_default		2 //{real} The default shield size multiplier for characters. Please note: If shield poking is disabled, the shield size is purely visual and has no impact on gameplay.
 #macro powershield_reflect_multiplier		1.5 //{real} The speed multiplier for projectiles that are reflected with a powershield, if <shield_type> is SHIELD_TYPE.perfect_shield_start
 #macro shield_poking_enable					true //{bool} Whether shields create a separate hurtbox or not, which allows shield poking.
 //Parry Press
@@ -424,7 +424,7 @@ function setting()
 #macro wavedash_horizontal_threshold		10 //{real} The maximum degrees away from a perfectly horizontal wavedash that will be corrected.
 #macro waveland_time_min					4 //{int} The minimum number of frames before a player can cancel a waveland/wavedash with another action.
 //Moonwalking
-#macro moonwalk_enable						true //{bool} Whether moonwalking is enabled or not.
+#macro moonwalk_enable						false //{bool} Whether moonwalking is enabled or not.
 #macro moonwalk_time						25 //{int} The minimum number of frames a moonwalk can last.
 //Knockouts
 #macro ko_time_min							60 //{int} The number of frames a player is knocked out before respawning.

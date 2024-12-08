@@ -1,27 +1,19 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function atk_base_ftilt(){
-//Forward Aerial
+//ftitlt
 	var run = true;
 	var _phase = argument_count > 0 ? argument[0] : attack_phase;
-	
 	//Timer
 	attack_frame = max(--attack_frame, 0);
-	friction_gravity(air_friction, grav, max_fall_speed);
-	fastfall_attack_try();
-	allow_hitfall();
-	aerial_drift();
-	
-	//Canceling
-	if (run && cancel_ground_check())
+	if (on_ground())
 		{
-		run = false;
+		friction_gravity(ground_friction, grav, max_fall_speed);
 		}
-	
-	//Properties
-	var _tipper_damage = 13;
-	var _normal_damage = 6;
-	
+	else
+		{
+		friction_gravity(air_friction, grav, max_fall_speed);
+		}
 	//Phases
 	if (run)
 		{
@@ -30,135 +22,72 @@ function atk_base_ftilt(){
 			case PHASE.start:
 				{
 				//Animation
-				anim_sprite = spr_air_forward;
-				anim_speed = 0;
+				anim_sprite = spr_ground_forward;
 				anim_frame = 0;
+				anim_speed = 0;
 		
-				attack_frame = 10;
-				landing_lag = 14;
-				speed_set(0, -1, true, true);
+				attack_frame = 9;
 				
 				return;
 				}
-			//Startup
+			//Startup -> Active
 			case 0:
 				{
-				//Animation
-				if (attack_frame == 6)
+				//Cancel in the air
+				if (cancel_air_check()) then return;
+				if (attack_frame = 4){
 					anim_frame = 1;
-				if (attack_frame == 2)
-					anim_frame = 2;
-					
+				}
+				
 				if (attack_frame == 0)
 					{
-					anim_frame = 3;
-			
+					anim_frame = 2;
 					attack_phase++;
-					attack_frame = 8;
+					attack_frame = 9;
+					speed_set(14 * facing, 0, false, false);
 					
-					game_sound_play(snd_swing3);
+					hitbox_create_melee(145, -160, 2.5, 2.1, 9, 12, 1, 4, 35, 6, SHAPE.square, 0);
 					
-					//Tipper
-					var _hitbox = hitbox_create_melee(28, -52, 0.45, 0.45, _tipper_damage, 5, 1.1, 12, 40, 1, SHAPE.circle, 0);
-					_hitbox.hit_vfx_style = HIT_VFX.slash_strong;
-					_hitbox.hit_sfx = snd_hit_strong0;
-					_hitbox.knockback_state = PLAYER_STATE.balloon;
+					//VFX
+					//var _vfx = vfx_create(spr_dust_dash_medium, 1, 0, 34, x, (bbox_bottom - 1) - 1, 2, 0, "VFX_Layer_Below");
+					//_vfx.vfx_xscale = 2 * facing;
 					}
+				//Movement
+				move_grounded();
 				break;
 				}
 			//Active
 			case 1:
 				{
-				if (attack_frame == 7)
-					{
-					anim_frame = 4;
-					
-					//Inside
-					var _hitbox = hitbox_create_melee(46, -18, 0.7, 1.0, _normal_damage, 8, 0.8, 5, 45, 1, SHAPE.circle, 0, FLIPPER.sakurai);
-					_hitbox.hit_vfx_style = HIT_VFX.slash_medium;
-					_hitbox.hit_sfx = snd_hit_weak0;
-					_hitbox.can_lock = true;
-					
-					//Tippers
-					var _hitbox = hitbox_create_melee(70, -10, 0.5, 0.7, _tipper_damage, 5, 1.1, 12, 40, 1, SHAPE.circle, 0);
-					_hitbox.hit_vfx_style = HIT_VFX.slash_strong;
-					_hitbox.hit_sfx = snd_hit_strong0;
-					_hitbox.knockback_state = PLAYER_STATE.balloon;
-					var _hitbox = hitbox_create_melee(54, -32, 0.6, 0.7, _tipper_damage, 5, 1.1, 12, 40, 1, SHAPE.circle, 0);
-					_hitbox.hit_vfx_style = HIT_VFX.slash_strong;
-					_hitbox.hit_sfx = snd_hit_strong0;
-					_hitbox.knockback_state = PLAYER_STATE.balloon;
-					}
-					
-				if (attack_frame == 6)
-					{
-					anim_frame = 5;
-					
-					//Inside
-					var _hitbox = hitbox_create_melee(54, 0, 0.6, 1.2, _normal_damage, 8, 0.8, 5, 45, 1, SHAPE.circle, 0, FLIPPER.sakurai);
-					_hitbox.hit_vfx_style = HIT_VFX.slash_medium;
-					_hitbox.hit_sfx = snd_hit_weak0;
-					_hitbox.can_lock = true;
-					
-					//Tipper
-					var _hitbox = hitbox_create_melee(65, 0, 0.7, 1.4, _tipper_damage, 5, 1.1, 12, 40, 1, SHAPE.circle, 0);
-					_hitbox.hit_vfx_style = HIT_VFX.slash_strong;
-					_hitbox.hit_sfx = snd_hit_strong0;
-					_hitbox.knockback_state = PLAYER_STATE.balloon;
-					}
-					
-				if (attack_frame == 5)
-					{
-					anim_frame = 6;
-					
-					//Inside
-					var _hitbox = hitbox_create_melee(27, 39, 1.1, 0.8, _normal_damage, 8, 0.8, 5, 45, 2, SHAPE.circle, 0, FLIPPER.from_player_center_horizontal);
-					_hitbox.hit_vfx_style = HIT_VFX.slash_medium;
-					_hitbox.hit_sfx = snd_hit_weak0;
-					_hitbox.can_lock = true;
-					}
+				//Cancel in the air
+				if (cancel_air_check()) then return;
 				
-				//Animation
-				if (attack_frame == 3)
-					anim_frame = 7;
-					
-				//Reduce landing lag on hit
-				if (attack_connected())
-					{
-					landing_lag = 8;
-					}
-					
+				if(attack_frame == 5){
+					anim_frame = 3;
+				}
 				if (attack_frame == 0)
-					{
-					anim_frame = 8;
+					{		
+					anim_frame = 4;
 					attack_phase++;
-					attack_frame = attack_connected() ? 15 : 25;
+					//Whiff lag
+					attack_frame = 20;
 					}
+				//Movement
+				move_grounded();
 				break;
 				}
-			//Endlag
+			//Grounded finish
 			case 2:
 				{
-				//Animation
-				if (attack_frame <= 20)
-					anim_frame = 9;
-				if (attack_frame <= 10)
-					anim_frame = 10;
-				
-				//Autocancel
-				if (attack_frame < 15)
-					landing_lag = 4;
-					
 				if (attack_frame == 0)
 					{
-					attack_stop(PLAYER_STATE.aerial);
+					attack_stop(PLAYER_STATE.crouching);
 					run = false;
 					}
+				//Movement
+				move_grounded();
 				break;
 				}
 			}
 		}
-		
-	//Movement
-	move();
 }
