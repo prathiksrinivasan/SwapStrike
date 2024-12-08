@@ -39,7 +39,7 @@
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Character_Zones","instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_A4BE87E","properties":[
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","propertyId":null,"objectId":{"name":"obj_css_zone","path":"objects/obj_css_zone/obj_css_zone.yy",},"value":"0",},
-            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","propertyId":{"name":"character_name","path":"objects/obj_css_zone/obj_css_zone.yy",},"objectId":{"name":"obj_css_zone","path":"objects/obj_css_zone/obj_css_zone.yy",},"value":"Blocky",},
+            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","propertyId":{"name":"character_name","path":"objects/obj_css_zone/obj_css_zone.yy",},"objectId":{"name":"obj_css_zone","path":"objects/obj_css_zone/obj_css_zone.yy",},"value":"TestCharacter",},
           ],"isDnd":false,"objectId":{"name":"obj_css_zone","path":"objects/obj_css_zone/obj_css_zone.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":4.0,"scaleY":7.5,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":16.0,"y":48.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_182DC6E1","properties":[
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","propertyId":null,"objectId":{"name":"obj_css_zone","path":"objects/obj_css_zone/obj_css_zone.yy",},"value":"1",},
@@ -126,7 +126,7 @@
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","spriteId":null,"colour":4281545523,"x":0,"y":0,"htiled":false,"vtiled":false,"hspeed":0.0,"vspeed":0.0,"stretch":false,"animationFPS":15.0,"animationSpeedType":0,"userdefinedAnimFPS":false,"visible":true,"depth":500,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritVisibility":true,"inheritSubLayers":true,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
   ],
   "inheritLayers": false,
-  "creationCodeFile": "",
+  "creationCodeFile": "rooms/rm_css/RoomCreationCode.gml",
   "inheritCode": false,
   "instanceCreationOrder": [
     {"name":"inst_1214D0E4","path":"rooms/rm_css/rm_css.yy",},

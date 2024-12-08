@@ -106,7 +106,7 @@ It is automatically run at the start of the game.
 //Palettes
 #macro palette_size_max					48 //{int} The maximum number of colors that can be in each column of a character's palette. If you want to increase this number, you will also need to change the array size in each palette shader.
 
-#macro debug_training					true //{bool) If true, will send the game directly into a testing room at initialization
+#macro debug_training					false //{bool) If true, will send the game directly into a testing room at initialization
 
 //Global Object Surface - Used to draw cropped sprites with the outline shader.
 function object_surface_get()

@@ -54,7 +54,7 @@ function stage_data_get_all()
 		stage_define
 			(
 			"Walkoff",
-			stage_clouds_init,
+			stage_space_init,
 			rm_stage_walkoff,
 			spr_stage_thumbnails,
 			["texture_stage_clouds"],

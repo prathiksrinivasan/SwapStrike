@@ -240,7 +240,7 @@ function character_blocky_init()
 		my_attacks[$ "Uair"			] = cloud_uair;
 		my_attacks[$ "Dair"			] = shulk_dair;
 				 
-		my_attacks[$ "Nspec"		] = ryu_nspec_hadoken;
+		my_attacks[$ "Nspec"		] = kapel;
 		my_attacks[$ "Fspec"		] = bayonetta_fspec_afterburner;
 		my_attacks[$ "Uspec"		] = zss_uspec;
 		my_attacks[$ "Dspec"		] = basic_dspec_falling_attack;

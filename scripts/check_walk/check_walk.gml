@@ -11,7 +11,7 @@ function check_walk()
 		change_facing();
 		
 		//Set the state to walking and stop the script.
-		state_set(PLAYER_STATE.walking);
+		state_set(PLAYER_STATE.running);
 		return true;
 		}
 	return false;

@@ -121,6 +121,9 @@ function snake_dspec_c4()
 			//Detonate
 			case 2:
 				{
+					
+				show_debug_message("I should detonate i think (C4)")
+				show_debug_message(attack_frame)
 				if (attack_frame == 30)
 					anim_frame = 6;
 				if (attack_frame == 26)
@@ -135,7 +138,6 @@ function snake_dspec_c4()
 						{
 						var _s = custom_entity_struct;
 						var _ids = custom_ids_struct;
-						
 						//If the C4 started to auto explode already, you can't explode it
 						if (owner == other.id && _s.auto_explode_timer > (120 - 15))
 							{
