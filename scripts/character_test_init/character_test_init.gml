@@ -243,10 +243,10 @@ function character_test_init()
 		my_attacks[$ "Uair"			] = -1;
 		my_attacks[$ "Dair"			] = -1;
 				 
-		my_attacks[$ "Nspec"		] = -1;
-		my_attacks[$ "Fspec"		] = -1;
+		my_attacks[$ "Nspec"		] = nspec_teleport;
+		my_attacks[$ "Fspec"		] = fspec_teleport;
 		my_attacks[$ "Uspec"		] = -1;
-		my_attacks[$ "Dspec"		] = -1;
+		my_attacks[$ "Dspec"		] = dspec_teleport;
 				 
 		my_attacks[$ "Grab"			] = -1;
 		my_attacks[$ "Dash_Grab"	] = -1;
