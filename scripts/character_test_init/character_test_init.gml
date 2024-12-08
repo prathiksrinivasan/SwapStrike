@@ -241,11 +241,12 @@ function character_test_init()
 		my_attacks[$ "Bair"			] = atk_base_bair;
 		my_attacks[$ "Uair"			] = -1;
 		my_attacks[$ "Dair"			] = atk_base_dair;
-				 
+
 		my_attacks[$ "Nspec"		] = -1;
 		my_attacks[$ "Fspec"		] = sora_sideb;
 		my_attacks[$ "Uspec"		] = pikachu_uspec_quick_attack;
 		my_attacks[$ "Dspec"		] = -1;
+
 				 
 		my_attacks[$ "Grab"			] = -1;
 		my_attacks[$ "Dash_Grab"	] = -1;
