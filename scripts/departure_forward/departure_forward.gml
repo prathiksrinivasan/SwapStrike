@@ -25,7 +25,7 @@ function departure_forward()
 			case PHASE.start:
 				{
 				//Animation
-				anim_sprite = spr_snake_dspec_c4;
+				anim_sprite = spr_spin_raise;
 				anim_frame = 0;
 				anim_speed = 0;
 			
@@ -48,7 +48,7 @@ function departure_forward()
 					}
 				else
 					{
-					attack_frame = 10;
+					attack_frame = 18;
 					}
 					
 				return;
@@ -57,12 +57,23 @@ function departure_forward()
 			case 0:
 				{
 				//Animation
-				if (attack_frame == 5)
+				if (attack_frame == 15)
 					anim_frame = 1;
+					
+				
+				if (attack_frame == 12)
+					anim_frame = 2;
+				
+				if (attack_frame == 9)
+					anim_frame = 3;	
+					
+				
+				if (attack_frame == 4)
+					anim_frame = 4;
 				
 				if (attack_frame == 0)
 					{
-					anim_frame = 2;
+					anim_frame = 5;
 					attack_phase++;
 					attack_frame = 15;
 					show_debug_message("here")
@@ -82,6 +93,7 @@ function departure_forward()
 
 				if (attack_frame == 0)
 					{
+					discard_special();
 					attack_stop();
 					}
 				break;
@@ -145,6 +157,7 @@ function departure_forward()
 			
 				if (attack_frame == 0)
 					{
+					discard_special();
 					attack_stop();
 					}
 				break;

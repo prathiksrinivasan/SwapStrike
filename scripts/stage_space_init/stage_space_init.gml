@@ -17,7 +17,7 @@ function stage_space_init()
 	foreground = [];
 	
 	//Music
-	stage_music_set(song_stage_archive, 166.4, 332.8);
+	stage_music_set(stage_theme_1);
 	
 	//Stage passive
 	callback_stage_passive = [];

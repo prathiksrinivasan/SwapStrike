@@ -4,7 +4,7 @@ var _c = custom_entity_struct;
 _c.lifetime -= 1;
 
 //Multihit
-if (_c.lifetime % 7 == 0)
+if (_c.lifetime % 10 == 0)
 	{
 	var _hitbox = hitbox_create_melee(0, -16, 1.0, 1.0, 1, 1, 0.0, 1, 90, 3, SHAPE.square, 0, FLIPPER.toward_hitbox_center);
 	_hitbox.asdi_multiplier = 2;

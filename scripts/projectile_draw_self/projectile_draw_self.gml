@@ -10,7 +10,10 @@ function projectile_draw_self()
 
 	//Fade value
 	var _f = background_get_clear_amount();
-		
+	if(follow_speed){
+		var mag = sqrt(sqr(vsp)+sqr(hsp));
+		overlay_angle = radtodeg(-90-sin(vsp/mag));
+	}
 	//Draw onto the surface
 	surface_set_target(object_surface_get());
 	draw_clear_alpha(c_white, 0);
@@ -20,6 +23,7 @@ function projectile_draw_self()
 	//Set up the shader and draw
 	var _half = overlay_scale * object_surface_size_half;
 	var _len = point_distance(0, 0, _half, _half);
+	
 	var _cx = lengthdir_x(_len, -45 + overlay_angle);
 	var _cy = lengthdir_y(_len, -45 + overlay_angle);
 	palette_shader_set(owner.palette_base, owner.palette_swap, 0.0, overlay_alpha, _f, projectile_outline, c_black, -1, -1, object_surface_get());

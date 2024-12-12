@@ -52,4 +52,5 @@ destroy_on_hit = true;
 destroy = false;
 hitbox_group_array = [];
 custom_projectile_struct = {};
+follow_speed = false;
 /* Copyright 2024 Springroll Games / Yosi */

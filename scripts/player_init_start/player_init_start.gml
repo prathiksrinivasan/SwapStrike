@@ -13,7 +13,10 @@ function player_init_start()
 		special_define("Eject", kapel_neutral, kapel_forward, kapel_down),
 		special_define("Teleport", teleport_neutral, teleport_forward, teleport_down),
 		special_define("Airdash", sora_sideb,sora_sideb,sora_sideb),
-		special_define("Potion", grenade_neutral, grenade_forward, grenade_down)
+		special_define("Potion", grenade_neutral, grenade_forward, grenade_down),
+		special_define("Mine", departure_neutral, departure_forward, departure_down),
+		special_define("Sawblade", sawblade_neutral, sawblade_forward, sawblade_down),
+		special_define("Missile", missiles_neutral, missiles_forward, missiles_down),
 	]
 	curr_special = specials_list[0];
 	special_deck = ds_stack_create();
