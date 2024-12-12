@@ -10,6 +10,8 @@ enum GAME_META_STATE
 	saving_clip,
 	paused_replay,
 	}
+	
+
 enum GAME_STATE
 	{
 	startup,
