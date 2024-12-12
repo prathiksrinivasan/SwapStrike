@@ -130,6 +130,7 @@ function kapel_neutral()
 
 				if (attack_frame == 0)
 					{
+					discard_special();
 					attack_stop();
 					}
 				break;
@@ -149,7 +150,9 @@ function kapel_neutral()
 
 				if (attack_frame == 0)
 					{
+					discard_special();
 					attack_stop();
+					
 					}
 				break;
 				}

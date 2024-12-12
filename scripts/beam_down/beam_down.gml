@@ -60,6 +60,7 @@ function beam_down(){
 					if(attack_frame == 15) then anim_frame = 7;
 					if (attack_frame == 0)
 					{
+						discard_special();
 						attack_stop();
 					}
 					break;

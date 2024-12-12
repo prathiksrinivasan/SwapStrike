@@ -150,6 +150,7 @@ function sora_sideb()
 					else
 						{
 						//No Second Dash
+						discard_special();
 						attack_stop(PLAYER_STATE.helpless);
 						run = false;
 						break;
@@ -180,6 +181,7 @@ function sora_sideb()
 				//Landing on the ground
 				if (vsp > 0 && (on_solid() || on_plat()))
 					{
+					discard_special();
 					attack_stop(PLAYER_STATE.landing_lag);
 
 					//It's possible that the player could go into parry stun, so double check that they are actually in landing lag
@@ -207,7 +209,9 @@ function sora_sideb()
 
 				if (attack_frame == 0)
 					{
+					discard_special();
 					attack_stop(PLAYER_STATE.helpless);
+					
 					run = false;
 					}
 				break;

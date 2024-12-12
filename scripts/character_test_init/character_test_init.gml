@@ -242,10 +242,15 @@ function character_test_init()
 		my_attacks[$ "Uair"			] = -1;
 		my_attacks[$ "Dair"			] = atk_base_dair;
 
-		my_attacks[$ "Nspec"		] = beam_neutral;
-		my_attacks[$ "Fspec"		] = beam_forward;
+		my_attacks[$ "Nspec"		] = grenade_neutral;
 		my_attacks[$ "Uspec"		] = -1;
-		my_attacks[$ "Dspec"		] = beam_down;
+		my_attacks[$ "Fspec"		] = grenade_forward;
+		my_attacks[$ "Dspec"		] = grenade_down;
+		
+		//my_attacks[$ "Nspec"		] = curr_special.neutral;
+		//my_attacks[$ "Uspec"		] = curr_special.neutral;
+		//my_attacks[$ "Fspec"		] = curr_special.side;
+		//my_attacks[$ "Dspec"		] = curr_special.down;
 
 				 
 		my_attacks[$ "Grab"			] = -1;

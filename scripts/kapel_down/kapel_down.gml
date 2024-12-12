@@ -130,6 +130,7 @@ function kapel_down()
 
 				if (attack_frame == 0)
 					{
+					discard_special();
 					attack_stop();
 					}
 				break;
@@ -149,6 +150,7 @@ function kapel_down()
 
 				if (attack_frame == 0)
 					{
+					discard_special();
 					attack_stop();
 					}
 				break;

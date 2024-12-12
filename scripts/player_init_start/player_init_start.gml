@@ -9,8 +9,11 @@ function player_init_start()
 	//Special - Neutral Side Down order
 	//Note: great
 	specials_list = [
-		special_define("John", cloud_uspec, cloud_fspec_cross_slash, basic_dspec_counter),
-		special_define("Jerry", bowser_uspec, basic_fspec_cloudburst, diddy_dspec_banana)
+		special_define("Beam", beam_neutral, beam_forward, beam_down),
+		special_define("Eject", kapel_neutral, kapel_forward, kapel_down),
+		special_define("Teleport", teleport_neutral, teleport_forward, teleport_down),
+		special_define("Airdash", sora_sideb,sora_sideb,sora_sideb)
+		special_define("Potion", grenade_neutral, grenade_forward, grenade_down)
 	]
 	curr_special = specials_list[0];
 	special_deck = ds_stack_create();

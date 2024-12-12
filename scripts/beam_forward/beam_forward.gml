@@ -60,7 +60,8 @@ function beam_forward(){
 					if(attack_frame == 15) then anim_frame = 7;
 					if (attack_frame == 0)
 					{
-						attack_stop();
+						discard_special();
+						attack_stop();		
 					}
 					break;
 				}

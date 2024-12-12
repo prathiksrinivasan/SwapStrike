@@ -121,6 +121,7 @@ function teleport_down(){
 				
 				if (attack_frame == 0)
 					{
+					discard_special();
 					attack_stop(PLAYER_STATE.helpless);
 					}
 				break;
@@ -140,7 +141,8 @@ function teleport_down(){
 			
 				if (attack_frame == 0)
 					{
-					attack_stop(PLAYER_STATE.idle);
+					discard_special();
+					attack_stop(PLAYER_STATE.idle);					
 					}
 				break;
 				}

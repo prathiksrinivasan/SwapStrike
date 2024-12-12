@@ -37,17 +37,14 @@ function beam_neutral(){
 					if(attack_frame == 6){
 						anim_frame = 4
 						hitbox_create_melee(380,-107,5,1.3,4,8,1,3,15,3,SHAPE.square,0);
-						draw_sprite_ext(beam_laser,0,x+(250*facing),-100,facing,1,0,1,1);
 					}
 					if(attack_frame == 3){
 						anim_frame = 5
 						hitbox_create_melee(380,-107,7.1,1.3,4,8,1,3,15,3,SHAPE.square,1);
-						draw_sprite_ext(beam_laser,1,x+(250*facing),-100,facing,1,0,1,1);
 					}
 					if(attack_frame == 0){
 						anim_frame = 6
 						hitbox_create_melee(380,-107,9.1,1.3,12,8,1,3,15,6,SHAPE.square,2);
-						draw_sprite_ext(beam_laser,2,x+(250*facing),-100,facing,1,0,1,1);
 						attack_frame=25;
 						attack_phase++;
 					}
@@ -58,6 +55,7 @@ function beam_neutral(){
 					if(attack_frame == 15) then anim_frame = 7;
 					if (attack_frame == 0)
 					{
+						discard_special();
 						attack_stop();
 					}
 					break;

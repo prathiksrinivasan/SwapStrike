@@ -130,6 +130,7 @@ function kapel_forward()
 
 				if (attack_frame == 0)
 					{
+					discard_special();
 					attack_stop();
 					}
 				break;
@@ -149,6 +150,8 @@ function kapel_forward()
 
 				if (attack_frame == 0)
 					{
+					
+					discard_special();
 					attack_stop();
 					}
 				break;
