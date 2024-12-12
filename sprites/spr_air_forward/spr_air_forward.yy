@@ -21,8 +21,8 @@
   "width": 250,
   "height": 200,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "wizard",
+    "path": "texturegroups/wizard",
   },
   "swatchColours": null,
   "gridX": 0,

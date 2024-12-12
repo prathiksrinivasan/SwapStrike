@@ -125,7 +125,7 @@ function setting()
 */
 //Game
 #macro show_debug_logs						false //{bool} Whether messages from the <log> function are displayed in the console. Debug mode must also be enabled.
-#macro max_players							8 //{int} The maximum number of players.
+#macro max_players							4 //{int} The maximum number of players.
 #macro max_teams							4 //{int} The maximum number of teams.
 #macro airdodge_type						AIRDODGE_TYPE.momentum_stop //{int} The type of airdodge to use, from the enum AIRDODGE_TYPE.
 #macro shield_type							SHIELD_TYPE.perfect_shield_start //{int} The type of shield to use, from the enum SHIELD_TYPE.
@@ -475,7 +475,7 @@ function setting()
 #macro item_limit							5 //{int} The maximum number of items that can be in the game before random spawning will turn off.
 #macro item_sprite_scale_default			2 //{real} The default sprite scale used for all items.
 //CSS
-#macro css_character_sprite_scale			1 //{int} The scaling of the sprite used for characters on the CSS.
+#macro css_character_sprite_scale			.8 //{int} The scaling of the sprite used for characters on the CSS.
 #macro css_cursor_loop_time					20 //{int} The number of frames before a player's cursor can will loop around the CSS.
 //Win Screen
 #macro win_screen_winner_render_scale		2 //{int} The scaling of the winner's render sprite on the Win Screen.

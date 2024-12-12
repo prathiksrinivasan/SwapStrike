@@ -71,9 +71,9 @@ mis_device_connect_callback_set
 				_device_id,
 				_cursor_index,
 				_group,
-				noone,
-				room_width div 2,
-				room_height div 2,
+				instance_position(-196, -80, obj_css_zone),
+				-50,
+				-50,
 				true,
 				),
 			);
@@ -93,12 +93,13 @@ mis_device_connect_callback_set
 				true,
 				)
 			);
+		css_player_set(_player_id, CSS_PLAYER.character, character_find("TestCharacter"));
 			
 		//Add the UI cursor
 		ui_cursor_add(_cursor_index, room_width div 2, room_height div 2);
 		
 		//Make the player hold the token
-		css_player_get(_player_id, CSS_PLAYER.custom).token_held = _player_id;
+		//css_player_get(_player_id, CSS_PLAYER.custom).token_held = _player_id;
 		
 		//Create the necessary UI
 		css_ui_refresh();

@@ -29,9 +29,9 @@ It is automatically run at the start of the game.
 #macro profile_name_length_max			12 //{int} The maximum number of characters that can be in a profile name.
 
 //Local
-#macro match_stock_default				3 //{int} The number of stocks players have in matches by default.
+#macro match_stock_default				1 //{int} The number of stocks players have in matches by default.
 #macro match_time_default				6 //{int} The amount of time players have in  matches by default.
-#macro match_stamina_default			0 //{int} The amount of stamina players have in matches by default.
+#macro match_stamina_default			150 //{int} The amount of stamina players have in matches by default.
 #macro match_team_mode_default			false //{bool} If teams are enabled in matches by default or not.
 #macro match_team_attack_default		false //{bool} If team attack is enabled in matches by default or not.
 #macro match_items_enable_default		false //{bool} If items are enabled in matches by default or not.
@@ -106,7 +106,7 @@ It is automatically run at the start of the game.
 //Palettes
 #macro palette_size_max					48 //{int} The maximum number of colors that can be in each column of a character's palette. If you want to increase this number, you will also need to change the array size in each palette shader.
 
-#macro debug_training					true //{bool) If true, will send the game directly into a testing room at initialization
+#macro debug_training					false //{bool) If true, will send the game directly into a testing room at initialization
 
 //Global Object Surface - Used to draw cropped sprites with the outline shader.
 function object_surface_get()

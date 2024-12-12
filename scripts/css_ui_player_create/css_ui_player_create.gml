@@ -23,8 +23,26 @@ function css_ui_player_create()
 
 	if (_size == 0)
 		{
-		var _x = 40 + (_num * 224);
-		var _y = 344;
+		if(_num == 0) {
+			
+			var _x = 40;
+			var _y = 120;
+		}
+		if(_num == 1) {
+			
+			var _x = 920 - 200;
+			var _y = 120;
+		}
+		if(_num == 2) {
+			
+			var _x = 40;
+			var _y = 330;
+		}
+		if(_num == 3) {
+			
+			var _x = 920-200;
+			var _y = 330;
+		}
 
 		//Group
 		with (instance_create_layer(_x, _y, _layer, obj_ui_group))

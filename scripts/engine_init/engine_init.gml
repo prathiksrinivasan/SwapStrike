@@ -25,25 +25,26 @@ function engine_init()
 
 	//Game Resizing
 	surface_resize(application_surface, screen_width, screen_height);
-	var _width = setting().screen_width_custom;
-	var _height = setting().screen_height_custom;
-	if (_width >= screen_size_min && _width <= screen_size_max &&
-		_height >= screen_size_min && _height <= screen_size_max)
-		{
-		//Resize the window
-		window_set_size(_width, _height);
-		//Center the window
-		window_set_position
-			(
-			(display_get_width() div 2) - (_width div 2),
-			(display_get_height() div 2) - (_height div 2),
-			);
-		}
-	else
-		{
-		window_set_size(screen_width, screen_height);
-		window_center();
-		}
+	window_set_fullscreen(true);
+	//var _width = setting().screen_width_custom;
+	//var _height = setting().screen_height_custom;
+	//if (_width >= screen_size_min && _width <= screen_size_max &&
+	//	_height >= screen_size_min && _height <= screen_size_max)
+	//	{
+	//	//Resize the window
+	//	window_set_size(_width, _height);
+	//	//Center the window
+	//	window_set_position
+	//		(
+	//		(display_get_width() div 2) - (_width div 2),
+	//		(display_get_height() div 2) - (_height div 2),
+	//		);
+	//	}
+	//else
+	//	{
+	//	window_set_size(screen_width, screen_height);
+	//	window_center();
+	//	}
 	window_set_caption(game_name + " " + version_string);
 
 	//Game Camera

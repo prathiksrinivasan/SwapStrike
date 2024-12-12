@@ -12,7 +12,7 @@ function player_init_start()
 		special_define("Beam", beam_neutral, beam_forward, beam_down),
 		special_define("Eject", kapel_neutral, kapel_forward, kapel_down),
 		special_define("Teleport", teleport_neutral, teleport_forward, teleport_down),
-		special_define("Airdash", sora_sideb,sora_sideb,sora_sideb)
+		special_define("Airdash", sora_sideb,sora_sideb,sora_sideb),
 		special_define("Potion", grenade_neutral, grenade_forward, grenade_down)
 	]
 	curr_special = specials_list[0];

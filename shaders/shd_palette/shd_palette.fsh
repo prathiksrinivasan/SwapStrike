@@ -18,7 +18,7 @@ uniform vec4 outline_color;
 uniform vec3 tint;
 uniform vec4 flash;
 
-const float tolerance = 0.1;
+const float tolerance = 0.18;
 
 void main()
 	{

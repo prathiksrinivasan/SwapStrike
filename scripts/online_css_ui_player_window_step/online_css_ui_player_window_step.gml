@@ -78,10 +78,10 @@ function online_css_ui_player_window_step()
 		{
 		case CSS_PLAYER_WINDOW_STATE.select_character:
 			//Recall token
-			if (_back && obj_online_css_ui.token_held == noone)
-				{
-				obj_online_css_ui.token_held = _player_id;
-				}
+			//if (_back && obj_online_css_ui.token_held == noone)
+			//	{
+			//	obj_online_css_ui.token_held = _player_id;
+			//	}
 					
 			//Change color
 			if (_option || _next || _last)
