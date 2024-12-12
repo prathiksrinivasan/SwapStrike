@@ -90,7 +90,7 @@ if (collision(x, y, [FLAG.solid]))
 	}
 
 //Overlay Sprite
-_c.overlay_frame = (_c.overlay_frame + _c.overlay_speed) % sprite_get_number(sprite_index);
+sp_c.overlay_frame = (_c.overlay_frame + _c.overlay_speed) % sprite_get_number(sprite_index);
 
 image_index = _c.overlay_frame;
 

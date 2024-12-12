@@ -242,10 +242,10 @@ function character_test_init()
 		my_attacks[$ "Uair"			] = -1;
 		my_attacks[$ "Dair"			] = atk_base_dair;
 
-		my_attacks[$ "Nspec"		] = -1;
-		my_attacks[$ "Fspec"		] = sora_sideb;
-		my_attacks[$ "Uspec"		] = pikachu_uspec_quick_attack;
-		my_attacks[$ "Dspec"		] = -1;
+		my_attacks[$ "Nspec"		] = beam_neutral;
+		my_attacks[$ "Fspec"		] = beam_forward;
+		my_attacks[$ "Uspec"		] = -1;
+		my_attacks[$ "Dspec"		] = beam_down;
 
 				 
 		my_attacks[$ "Grab"			] = -1;
@@ -300,24 +300,24 @@ function character_test_init()
 		my_sprites[$ "Parry_Stun"		] = spr_placeholder;
 		my_sprites[$ "Spot_Dodge"		] = spr_placeholder;
 				 
-		my_sprites[$ "Hitlag"			] = spr_placeholder;
-		my_sprites[$ "Hitstun"			] = spr_placeholder;
-		my_sprites[$ "Tumble"			] = spr_placeholder;
-		my_sprites[$ "Helpless"			] = spr_placeholder;
-		my_sprites[$ "Magnet"			] = spr_placeholder;
-		my_sprites[$ "Flinch"			] = spr_placeholder;
-		my_sprites[$ "Landing_Lag"		] = spr_placeholder;
-		my_sprites[$ "Balloon"			] = spr_placeholder;
-		my_sprites[$ "Reeling"			] = spr_placeholder;
-		my_sprites[$ "Knockdown"		] = spr_placeholder;
-		my_sprites[$ "Lock"				] = spr_placeholder;
-		my_sprites[$ "Getup"			] = spr_placeholder;
+		my_sprites[$ "Hitlag"			] = spr_wiz_hitlag;
+		my_sprites[$ "Hitstun"			] = spr_wiz_hit;
+		my_sprites[$ "Tumble"			] = spr_wiz_hit;
+		my_sprites[$ "Helpless"			] = spr_wiz_fall;
+		my_sprites[$ "Magnet"			] = -1;
+		my_sprites[$ "Flinch"			] = spr_wiz_hit2;
+		my_sprites[$ "Landing_Lag"		] = -1;
+		my_sprites[$ "Balloon"			] = spr_wiz_hit;
+		my_sprites[$ "Reeling"			] = spr_wiz_hit2;
+		my_sprites[$ "Knockdown"		] = anim_define_ext(spr_wiz_knockdown,0,.5,1,0,1,0,0,0);
+		my_sprites[$ "Lock"				] = anim_define_ext(spr_wiz_knockdown,0,.5,1,0,1,0,0,0);
+		my_sprites[$ "Getup"			] = spr_wiz_getup;
 	
-		my_sprites[$ "Tech_Rolling"		] = spr_placeholder; 
-		my_sprites[$ "Teching"			] = spr_placeholder;
-		my_sprites[$ "Teching_Wall"		] = spr_placeholder;
-		my_sprites[$ "Teching_Ceiling"	] = spr_placeholder;
-		my_sprites[$ "Tech_Wall_Jump"	] = spr_placeholder;
+		my_sprites[$ "Tech_Rolling"		] = anim_define_ext(spr_wiz_getup,0,.5,1,0,1,0,0,0); 
+		my_sprites[$ "Teching"			] = anim_define_ext(spr_wiz_getup,0,.5,1,0,1,0,0,0);
+		my_sprites[$ "Teching_Wall"		] = spr_wiz_fall;
+		my_sprites[$ "Teching_Ceiling"	] = spr_wiz_fall;
+		my_sprites[$ "Tech_Wall_Jump"	] = -1;
 				 
 		my_sprites[$ "Ledge_Snap"		] = spr_placeholder;
 		my_sprites[$ "Ledge_Hang"		] = spr_placeholder;
@@ -334,7 +334,7 @@ function character_test_init()
 		my_sprites[$ "Screen_KO"		] = spr_placeholder;
 				 
 		my_sprites[$ "Grabbing"			] = spr_placeholder;
-		my_sprites[$ "Grabbed"			] = spr_placeholder;
+		my_sprites[$ "Grabbed"			] = spr_wiz_hit2;
 		my_sprites[$ "Grab_Release"		] = spr_placeholder;
 		}
 	}

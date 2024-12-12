@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Characters/[Shared]/Attacks/Scripts.yy",
+    "name": "SpecialAttacks",
+    "path": "folders/Characters/TestCharacter/Scripts/SpecialAttacks.yy",
   },
 }

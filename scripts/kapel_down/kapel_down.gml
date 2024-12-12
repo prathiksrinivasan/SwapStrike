@@ -25,14 +25,14 @@ function kapel_down()
 			case PHASE.start:
 				{
 				//Animation
-				anim_sprite = spr_ryu_nspec_hadoken;
+				anim_sprite = spr_spin_nofx;
 				anim_frame = 0;
 				anim_speed = 0;
-		
+
 				attack_frame = 13;
-				
+
 				reverse_b();
-				
+
 				//EX
 				ex_move_reset();
 				return;
@@ -40,12 +40,12 @@ function kapel_down()
 			//Startup -> Throw
 			case 0:
 				{
-				
+
 				if (attack_frame == 8)
 					{
 					b_reverse();
 					}
-					
+
 				//Animation
 				if (attack_frame == 9)
 					anim_frame = 1;
@@ -53,20 +53,20 @@ function kapel_down()
 					anim_frame = 2;
 				if (attack_frame == 2)
 					anim_frame = 3;
-				
+
 				if (attack_frame == 0)
 					{
 					anim_frame = 4;
-					
-					speed_set(0, -15, false, false);
 
-					
+					speed_set(0, -18, false, false);
+
+
 					game_sound_play(snd_punch0);
-					
+
 					//VFX
 					var _vfx = vfx_create(spr_dust_dash_medium, 1, 0, 34, x, (bbox_bottom - 1) - 1, 2, 0, "VFX_Layer_Below");
 					_vfx.vfx_xscale = 2 * facing;
-					
+
 					//Melee hit
 					var _hitbox = hitbox_create_melee(32, 0, 0.6, 0.6, 4, 0, 0, 8, 0, 2, SHAPE.square, 0);
 					_hitbox.hit_vfx_style = HIT_VFX.normal_medium;
@@ -78,7 +78,7 @@ function kapel_down()
 					var _hitbox = hitbox_create_melee(32, 0, 0.6, 0.6, 4, 0, 0.5, 8, 50, 2, SHAPE.square, 0);
 					_hitbox.hit_vfx_style = HIT_VFX.normal_medium;
 					_hitbox.hit_restriction = HIT_RESTRICTION.aerial_only;
-					
+
 					if (!input_held(INPUT.shield))
 						{
 						//Create the projectile 1 frame later, so if the melee hit lands the projectile will spawn after the hitlag
@@ -100,22 +100,22 @@ function kapel_down()
 				//Projectile
 				if (attack_frame == 32)
 					{
-					var _proj = hitbox_create_projectile_custom(obj_link_nspec_bow_arrow, 24, -8, 2, 2, 5, 10, 0.4, 65, 180, SHAPE.circle, 0, 0);
+					var _proj = hitbox_create_projectile_custom(obj_kapel, 24, -8, 2, 2, 10, 12, 0.4, 65, 180, SHAPE.circle, 0, 0);
 					_proj.destroy_on_blocks = true;
 					_proj.destroy_on_hit = true;
 					_proj.grav = 0;
-					_proj.base_hitlag = 25;
-					_proj.custom_hitstun = 60;
+					_proj.base_hitlag = 14;
+					_proj.custom_hitstun = 30;
 					_proj.hit_sfx =  snd_hit_strong1;
 					_proj.hit_vfx_style =[HIT_VFX.explosion, HIT_VFX.slash_medium, HIT_VFX.electric];
 					_proj.knockback_state =PLAYER_STATE.balloon;
 					_proj.can_lock = false;
-					
-						
+
+
 					//Cooldown
 					attack_cooldown_set(50);
 					}
-					
+
 				//Animation
 				if (attack_frame == 31)
 					anim_frame = 5;
@@ -127,7 +127,7 @@ function kapel_down()
 					anim_frame = 8;
 				if (attack_frame == 7)
 					anim_frame = 9;
-			
+
 				if (attack_frame == 0)
 					{
 					attack_stop();
@@ -146,7 +146,7 @@ function kapel_down()
 					anim_frame = 8;
 				if (attack_frame == 3)
 					anim_frame = 9;
-			
+
 				if (attack_frame == 0)
 					{
 					attack_stop();
@@ -158,4 +158,3 @@ function kapel_down()
 	//Movement
 	move();
 	}
-/* Copyright 2024 Springroll Games / Yosi */

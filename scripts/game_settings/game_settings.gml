@@ -195,7 +195,7 @@ function setting()
 //Control Stick
 #macro stick_check_type						STICK_CHECK_TYPE.backwards //{int} The stick check type to use, from the enum STICK_CHECK_TYPE.
 #macro stick_check_frames					3 //{int} The number of frames to use to determine the speed of the control stick.
-#macro stick_tilt_amount					0 //{real} The "tilt" threshold of the left stick.
+#macro stick_tilt_amount					0.2 //{real} The "tilt" threshold of the left stick.
 #macro stick_flick_speed					0.50 //{real} The speed the left stick needs to be moved at to count as a flick.
 #macro stick_flick_amount					0.75 //{real} The "flick" threshold of the left stick.
 #macro stick_flick_buff						6 //{int} The number of frames a flick will be saved.

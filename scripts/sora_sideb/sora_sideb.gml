@@ -3,10 +3,10 @@ function sora_sideb()
 	//Up Special
 	var run = true;
 	var _phase = argument_count > 0 ? argument[0] : attack_phase;
-	
+
 	//Timer
 	attack_frame = max(--attack_frame, 0);
-	
+
 	//Main Phases
 	if (run)
 		{
@@ -15,13 +15,13 @@ function sora_sideb()
 			case PHASE.start:
 				{
 				//Animation
-				anim_sprite = spr_placeholder;
+				anim_sprite = spr_airdash;
 				anim_speed = 0;
 				anim_frame = 0;
-				anim_angle = 90;
-				
+				anim_angle = 0;
+
 				custom_attack_struct.quick_attack_dir = 90;
-				
+
 				landing_lag = 15;
 				speed_set(0, 0, false, false);
 				attack_frame = 30;
@@ -37,23 +37,24 @@ function sora_sideb()
 					change_facing();
 					anim_angle = (facing == 1) ? stick_get_direction(Lstick) : stick_get_direction(Lstick) - 180;
 					}
-				
+
 				//First Dash
 				if (attack_frame == 0)
 					{
 					anim_frame = 1;
-					
+
 					//Speed
 					var _len = 20;
 					var _dir = custom_attack_struct.quick_attack_dir;
 					speed_set(lengthdir_x(_len, _dir), lengthdir_y(_len, _dir), false, false);
-					
+
 					//Hitbox
+					var _hitbox = hitbox_create_melee(0, -100, 3, 2, 4, 10, 0.9, 5, 90, 4, SHAPE.rotation, _phase, FLIPPER.sakurai);
 					var _hitbox = hitbox_create_melee(0, -100, 3, 2, 4, 10, 0.9, 5, 90, 20, SHAPE.rotation, _phase, FLIPPER.sakurai);
 					hitbox_sprite_angle_set(_hitbox, _dir, true);
 					_hitbox.hit_vfx_style = [HIT_VFX.slash_medium, HIT_VFX.electric_weak];
 					_hitbox.hit_sfx = snd_hit_weak1;
-					
+
 					attack_frame = 30;
 					attack_phase++;
 					}
@@ -64,13 +65,13 @@ function sora_sideb()
 			case 2:
 				{
 				//Animation
-				if (attack_frame == 13) then anim_frame = 2;
-				if (attack_frame == 12) then anim_frame = 3;
-				if (attack_frame == 11) then anim_frame = 4;
-				if (attack_frame == 10) then anim_frame = 5;
-				if (attack_frame == 9) then anim_frame = 6;
-				if (attack_frame == 8) then anim_frame = 7;
-				if (attack_frame == 7) then anim_frame = 8;
+				if (attack_frame == 27) then anim_frame = 2;
+				if (attack_frame == 24) then anim_frame = 3;
+				if (attack_frame == 21) then anim_frame = 4;
+				if (attack_frame == 18) then anim_frame = 5;
+				if (attack_frame == 15) then anim_frame = 6;
+				if (attack_frame == 12) then anim_frame = 7;
+				if (attack_frame == 9) then anim_frame = 8;
 				if (attack_frame <= 6)
 					{
 					if (stick_tilted(Lstick))
@@ -84,33 +85,33 @@ function sora_sideb()
 						anim_frame = 9;
 						}
 					}
-				
+
 				//Ledge Grab
 				if (check_ledge_grab()) then return;
-				
+
 				//Speed
 				var _len = 20;
 				var _dir = custom_attack_struct.quick_attack_dir;
 				speed_set(lengthdir_x(_len, _dir), lengthdir_y(_len, _dir), false, false);
-				
+
 				//Landing on the ground
 				if (vsp > 0 && (on_solid() || on_plat()))
 					{
 					attack_stop(PLAYER_STATE.landing_lag);
-					
+
 					//It's possible that the player could go into parry stun, so double check that they are actually in landing lag
 					if (state == PLAYER_STATE.landing_lag)
 						{
 						state_frame = landing_lag;
 						}
-					
+
 					speed_set(hsp / 4, 0, false, false);
-					
+
 					//VFX
 					vfx_create(spr_dust_land, 1, 0, 26, x, (bbox_bottom - 1) - 1, 2, 0, "VFX_Layer_Below");
 					return;
 					}
-				
+
 				if (attack_frame <= 10)
 					{
 					//Reset the speed
@@ -121,7 +122,7 @@ function sora_sideb()
 					//Create VFX
 					vfx_create(spr_shine_attack, 1, 0, 8, x, y, 1, prng_number(0, 360));
 					}
-				
+
 				//Second AND THIRD Dash
 				if (attack_frame == 0)
 					{
@@ -130,18 +131,19 @@ function sora_sideb()
 					if (stick_tilted(Lstick))
 						{
 						anim_frame = 1;
-						
+
 						//Speed
 						var _len = 20;
 						custom_attack_struct.quick_attack_dir = _dir;
 						speed_set(lengthdir_x(_len, _dir), lengthdir_y(_len, _dir), false, false);
-						
+
 						//Hitbox
+						var _hitbox = hitbox_create_melee(0, -100, 3, 2, 4, 10, 0.9, 5, 90, 4, SHAPE.rotation, _phase, FLIPPER.sakurai);
 						var _hitbox = hitbox_create_melee(0, -100, 3, 2, 4, 10, 0.9, 5, 90, 20, SHAPE.rotation, _phase, FLIPPER.sakurai);
 						hitbox_sprite_angle_set(_hitbox, _dir, true);
 						_hitbox.hit_vfx_style = [HIT_VFX.slash_medium, HIT_VFX.electric_weak];
 						_hitbox.hit_sfx = snd_hit_weak0;
-						
+
 						attack_frame = 30;
 						attack_phase++;
 						}
@@ -174,35 +176,35 @@ function sora_sideb()
 					var _dir = custom_attack_struct.quick_attack_dir;
 					speed_set(lengthdir_x(_len, _dir), lengthdir_y(_len, _dir), false, false);
 					}
-				
+
 				//Landing on the ground
 				if (vsp > 0 && (on_solid() || on_plat()))
 					{
 					attack_stop(PLAYER_STATE.landing_lag);
-					
+
 					//It's possible that the player could go into parry stun, so double check that they are actually in landing lag
 					if (state == PLAYER_STATE.landing_lag)
 						{
 						state_frame = landing_lag;
 						}
-					
+
 					speed_set(hsp / 4, 0, false, false);
-					
+
 					//VFX
 					vfx_create(spr_dust_land, 1, 0, 26, x, (bbox_bottom - 1) - 1, 2, 0, "VFX_Layer_Below");
 					return;
 					}
-				
+
 				//Animation
-				if (attack_frame == 13) then anim_frame = 2;
-				if (attack_frame == 12) then anim_frame = 3;
-				if (attack_frame == 11) then anim_frame = 4;
-				if (attack_frame == 10) then anim_frame = 5;
-				if (attack_frame == 8) then anim_frame = 6;
-				if (attack_frame == 6) then anim_frame = 7;
-				if (attack_frame == 4) then anim_frame = 8;
-				if (attack_frame == 2) then anim_frame = 9;
 				
+				if (attack_frame == 27) then anim_frame = 2;
+				if (attack_frame == 24) then anim_frame = 3;
+				if (attack_frame == 21) then anim_frame = 4;
+				if (attack_frame == 18) then anim_frame = 5;
+				if (attack_frame == 15) then anim_frame = 6;
+				if (attack_frame == 12) then anim_frame = 7;
+				if (attack_frame == 9) then anim_frame = 8;
+
 				if (attack_frame == 0)
 					{
 					attack_stop(PLAYER_STATE.helpless);
@@ -212,14 +214,13 @@ function sora_sideb()
 				}
 			}
 		}
-	
+
 	//Hurtbox
 	if (run)
 		{
 		hurtbox_anim_match(spr_default_hurtbox);
 		}
-	
+
 	//Movement
 	move_hit_platforms();
 	}
-/* Copyright 2024 Springroll Games / Yosi */
